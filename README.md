@@ -1,7 +1,9 @@
 bitsbeflippin-holiday-mailer
 ============================
-Team: Bits Be Flippin'
-Class: CSCD350 - Software Engineering
+Team: Bits Be Flippin'.
+
+Class: CSCD350 - Software Engineering.
+
 Description: Main Repository for Holiday Mailer project.
 
 Notes:
