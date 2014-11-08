@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HolidayMailer
 {
-    class Contact : Entity
+    public class Contact : Entity
     {
         
         
