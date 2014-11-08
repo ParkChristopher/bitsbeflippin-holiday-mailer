@@ -35,7 +35,7 @@ namespace HolidayMailer
 
         public string Email
         {
-            get { return Email; }
+            get { return _email; }
             set { _email = value; }
         }
     }
