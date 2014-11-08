@@ -13,9 +13,6 @@ namespace HolidayMailer
 
         public Entity(string lastName, string firstName, string email)
         {
-            if (lastName == null || firstName == null || email == null)
-                throw new ArgumentNullException("Error: Contact field is null");
-
             _lastName = lastName;
             _firstName = firstName;
             _email = email;

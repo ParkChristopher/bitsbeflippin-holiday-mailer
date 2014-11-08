@@ -16,6 +16,13 @@ namespace HolidayMailer
         {
         }
 
+        public User(string lastName, string firstName,
+            string email, string password)
+            : base(lastName, firstName, email)
+        {
+            _password = password;
+        }
+
         public string Password
         {
             get { return _password; }
