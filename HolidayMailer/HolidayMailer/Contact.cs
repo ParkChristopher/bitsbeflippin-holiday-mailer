@@ -8,8 +8,6 @@ namespace HolidayMailer
 {
     public class Contact : Entity
     {
-        
-        
         private bool _sentPrevious;
 
         public Contact(string lastName, string firstName,
