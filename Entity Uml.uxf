@@ -36,7 +36,10 @@ Responsibilities
     <panel_attributes>
 User
 --
-+Property SentPrevious: bool
+ClassAttribute:
+-password
+--
++Property Password: string
 --
 Responsibilities
 - Contains information about
