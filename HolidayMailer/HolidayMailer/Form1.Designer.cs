@@ -33,26 +33,26 @@
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
-            this.listViewContacts = new System.Windows.Forms.ListView();
-            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
-            this.buttonAddContact = new System.Windows.Forms.Button();
-            this.buttonDeleteSelected = new System.Windows.Forms.Button();
-            this.buttonEditSelected = new System.Windows.Forms.Button();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.buttonAttachFile = new System.Windows.Forms.Button();
-            this.buttonRemoveAttachment = new System.Windows.Forms.Button();
-            this.groupBoxSendTo = new System.Windows.Forms.GroupBox();
-            this.radioButtonSendAll = new System.Windows.Forms.RadioButton();
-            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
-            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
             this.buttonSend = new System.Windows.Forms.Button();
+            this.groupBoxSendTo = new System.Windows.Forms.GroupBox();
+            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
+            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
+            this.radioButtonSendAll = new System.Windows.Forms.RadioButton();
+            this.buttonRemoveAttachment = new System.Windows.Forms.Button();
+            this.buttonAttachFile = new System.Windows.Forms.Button();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.buttonEditSelected = new System.Windows.Forms.Button();
+            this.buttonDeleteSelected = new System.Windows.Forms.Button();
+            this.buttonAddContact = new System.Windows.Forms.Button();
+            this.listViewContacts = new System.Windows.Forms.ListView();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
             this.mainWindow.Panel2.SuspendLayout();
             this.mainWindow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.groupBoxSendTo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // menuBar
@@ -112,76 +112,14 @@
             this.mainWindow.SplitterDistance = 447;
             this.mainWindow.TabIndex = 1;
             // 
-            // listViewContacts
+            // buttonSend
             // 
-            this.listViewContacts.Location = new System.Drawing.Point(9, 24);
-            this.listViewContacts.Name = "listViewContacts";
-            this.listViewContacts.Size = new System.Drawing.Size(450, 440);
-            this.listViewContacts.TabIndex = 0;
-            this.listViewContacts.UseCompatibleStateImageBehavior = false;
-            // 
-            // pictureBoxPreview
-            // 
-            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPreview.Location = new System.Drawing.Point(147, 24);
-            this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.Size = new System.Drawing.Size(287, 409);
-            this.pictureBoxPreview.TabIndex = 0;
-            this.pictureBoxPreview.TabStop = false;
-            // 
-            // buttonAddContact
-            // 
-            this.buttonAddContact.Location = new System.Drawing.Point(386, 472);
-            this.buttonAddContact.Name = "buttonAddContact";
-            this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddContact.TabIndex = 1;
-            this.buttonAddContact.Text = "Add Contact";
-            this.buttonAddContact.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteSelected
-            // 
-            this.buttonDeleteSelected.Location = new System.Drawing.Point(9, 472);
-            this.buttonDeleteSelected.Name = "buttonDeleteSelected";
-            this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
-            this.buttonDeleteSelected.TabIndex = 2;
-            this.buttonDeleteSelected.Text = "Delete Selected";
-            this.buttonDeleteSelected.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditSelected
-            // 
-            this.buttonEditSelected.Location = new System.Drawing.Point(112, 472);
-            this.buttonEditSelected.Name = "buttonEditSelected";
-            this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
-            this.buttonEditSelected.TabIndex = 3;
-            this.buttonEditSelected.Text = "Edit Selected";
-            this.buttonEditSelected.UseVisualStyleBackColor = true;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(13, 12);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(29, 13);
-            this.labelUser.TabIndex = 1;
-            this.labelUser.Text = "User";
-            // 
-            // buttonAttachFile
-            // 
-            this.buttonAttachFile.Location = new System.Drawing.Point(147, 439);
-            this.buttonAttachFile.Name = "buttonAttachFile";
-            this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
-            this.buttonAttachFile.TabIndex = 2;
-            this.buttonAttachFile.Text = "Attach File";
-            this.buttonAttachFile.UseVisualStyleBackColor = true;
-            // 
-            // buttonRemoveAttachment
-            // 
-            this.buttonRemoveAttachment.Location = new System.Drawing.Point(228, 439);
-            this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
-            this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
-            this.buttonRemoveAttachment.TabIndex = 3;
-            this.buttonRemoveAttachment.Text = "Remove Attachment";
-            this.buttonRemoveAttachment.UseVisualStyleBackColor = true;
+            this.buttonSend.Location = new System.Drawing.Point(16, 144);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(81, 23);
+            this.buttonSend.TabIndex = 5;
+            this.buttonSend.Text = "Send";
+            this.buttonSend.UseVisualStyleBackColor = true;
             // 
             // groupBoxSendTo
             // 
@@ -195,16 +133,16 @@
             this.groupBoxSendTo.TabStop = false;
             this.groupBoxSendTo.Text = "Send to:";
             // 
-            // radioButtonSendAll
+            // radioButtonSendPrevious
             // 
-            this.radioButtonSendAll.AutoSize = true;
-            this.radioButtonSendAll.Location = new System.Drawing.Point(14, 18);
-            this.radioButtonSendAll.Name = "radioButtonSendAll";
-            this.radioButtonSendAll.Size = new System.Drawing.Size(36, 17);
-            this.radioButtonSendAll.TabIndex = 0;
-            this.radioButtonSendAll.TabStop = true;
-            this.radioButtonSendAll.Text = "All";
-            this.radioButtonSendAll.UseVisualStyleBackColor = true;
+            this.radioButtonSendPrevious.AutoSize = true;
+            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 66);
+            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
+            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
+            this.radioButtonSendPrevious.TabIndex = 2;
+            this.radioButtonSendPrevious.TabStop = true;
+            this.radioButtonSendPrevious.Text = "Previous Sender";
+            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
             // 
             // radioButtonSendSelected
             // 
@@ -217,25 +155,88 @@
             this.radioButtonSendSelected.Text = "Selected";
             this.radioButtonSendSelected.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSendPrevious
+            // radioButtonSendAll
             // 
-            this.radioButtonSendPrevious.AutoSize = true;
-            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 66);
-            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
-            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
-            this.radioButtonSendPrevious.TabIndex = 2;
-            this.radioButtonSendPrevious.TabStop = true;
-            this.radioButtonSendPrevious.Text = "Previous Sender";
-            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
+            this.radioButtonSendAll.AutoSize = true;
+            this.radioButtonSendAll.Location = new System.Drawing.Point(14, 18);
+            this.radioButtonSendAll.Name = "radioButtonSendAll";
+            this.radioButtonSendAll.Size = new System.Drawing.Size(36, 17);
+            this.radioButtonSendAll.TabIndex = 0;
+            this.radioButtonSendAll.TabStop = true;
+            this.radioButtonSendAll.Text = "All";
+            this.radioButtonSendAll.UseVisualStyleBackColor = true;
             // 
-            // buttonSend
+            // buttonRemoveAttachment
             // 
-            this.buttonSend.Location = new System.Drawing.Point(16, 144);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(81, 23);
-            this.buttonSend.TabIndex = 5;
-            this.buttonSend.Text = "Send";
-            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonRemoveAttachment.Location = new System.Drawing.Point(228, 439);
+            this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
+            this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
+            this.buttonRemoveAttachment.TabIndex = 3;
+            this.buttonRemoveAttachment.Text = "Remove Attachment";
+            this.buttonRemoveAttachment.UseVisualStyleBackColor = true;
+            // 
+            // buttonAttachFile
+            // 
+            this.buttonAttachFile.Location = new System.Drawing.Point(147, 439);
+            this.buttonAttachFile.Name = "buttonAttachFile";
+            this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
+            this.buttonAttachFile.TabIndex = 2;
+            this.buttonAttachFile.Text = "Attach File";
+            this.buttonAttachFile.UseVisualStyleBackColor = true;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(13, 12);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(29, 13);
+            this.labelUser.TabIndex = 1;
+            this.labelUser.Text = "User";
+            // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPreview.Location = new System.Drawing.Point(147, 24);
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.Size = new System.Drawing.Size(287, 409);
+            this.pictureBoxPreview.TabIndex = 0;
+            this.pictureBoxPreview.TabStop = false;
+            // 
+            // buttonEditSelected
+            // 
+            this.buttonEditSelected.Location = new System.Drawing.Point(112, 472);
+            this.buttonEditSelected.Name = "buttonEditSelected";
+            this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
+            this.buttonEditSelected.TabIndex = 3;
+            this.buttonEditSelected.Text = "Edit Selected";
+            this.buttonEditSelected.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteSelected
+            // 
+            this.buttonDeleteSelected.Location = new System.Drawing.Point(9, 472);
+            this.buttonDeleteSelected.Name = "buttonDeleteSelected";
+            this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
+            this.buttonDeleteSelected.TabIndex = 2;
+            this.buttonDeleteSelected.Text = "Delete Selected";
+            this.buttonDeleteSelected.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddContact
+            // 
+            this.buttonAddContact.Location = new System.Drawing.Point(386, 472);
+            this.buttonAddContact.Name = "buttonAddContact";
+            this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddContact.TabIndex = 1;
+            this.buttonAddContact.Text = "Add Contact";
+            this.buttonAddContact.UseVisualStyleBackColor = true;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
+            // 
+            // listViewContacts
+            // 
+            this.listViewContacts.Location = new System.Drawing.Point(9, 24);
+            this.listViewContacts.Name = "listViewContacts";
+            this.listViewContacts.Size = new System.Drawing.Size(450, 440);
+            this.listViewContacts.TabIndex = 0;
+            this.listViewContacts.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
@@ -256,9 +257,9 @@
             this.mainWindow.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).EndInit();
             this.mainWindow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.groupBoxSendTo.ResumeLayout(false);
             this.groupBoxSendTo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -26,5 +26,14 @@ namespace HolidayMailer
         {
 
         }
+
+        private void buttonAddContact_Click(object sender, EventArgs e)
+        {
+            FormAddContact addContact = new FormAddContact();
+            addContact.Owner = this;
+            addContact.ShowDialog();
+
+            //Set available controls here
+        }
     }
 }
