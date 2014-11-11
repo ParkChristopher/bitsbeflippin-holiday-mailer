@@ -46,6 +46,10 @@
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.listViewContacts = new System.Windows.Forms.ListView();
+            this.columnFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrevious = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -235,11 +239,39 @@
             // 
             // listViewContacts
             // 
+            this.listViewContacts.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listViewContacts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnFirstName,
+            this.columnLastName,
+            this.columnEmail,
+            this.columnPrevious});
+            this.listViewContacts.FullRowSelect = true;
             this.listViewContacts.Location = new System.Drawing.Point(9, 24);
             this.listViewContacts.Name = "listViewContacts";
             this.listViewContacts.Size = new System.Drawing.Size(450, 440);
             this.listViewContacts.TabIndex = 0;
             this.listViewContacts.UseCompatibleStateImageBehavior = false;
+            this.listViewContacts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnFirstName
+            // 
+            this.columnFirstName.Text = "First Name";
+            this.columnFirstName.Width = 78;
+            // 
+            // columnLastName
+            // 
+            this.columnLastName.Text = "Last Name";
+            this.columnLastName.Width = 87;
+            // 
+            // columnEmail
+            // 
+            this.columnEmail.Text = "Email";
+            this.columnEmail.Width = 181;
+            // 
+            // columnPrevious
+            // 
+            this.columnPrevious.Text = "Previous Email Recieved";
+            this.columnPrevious.Width = 99;
             // 
             // Form1
             // 
@@ -288,6 +320,10 @@
         private System.Windows.Forms.Button buttonDeleteSelected;
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.ColumnHeader columnFirstName;
+        private System.Windows.Forms.ColumnHeader columnLastName;
+        private System.Windows.Forms.ColumnHeader columnEmail;
+        private System.Windows.Forms.ColumnHeader columnPrevious;
 
     }
 }

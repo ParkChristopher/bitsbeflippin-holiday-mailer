@@ -8,18 +8,18 @@ namespace HolidayMailer
 {
     public class Contact : Entity
     {
-        private bool _sentPrevious;
+        private bool sentPrevious;
 
         public Contact(string lastName, string firstName,
             string email, bool sentPrevious) : base(lastName, firstName, email)
         {
-            _sentPrevious = sentPrevious;
+            this.sentPrevious = sentPrevious;
         }
 
         public bool SentPrevious
         {
-            get { return _sentPrevious; }
-            set { _sentPrevious = value; }
+            get { return sentPrevious; }
+            set { sentPrevious = value; }
         }
     }
 }

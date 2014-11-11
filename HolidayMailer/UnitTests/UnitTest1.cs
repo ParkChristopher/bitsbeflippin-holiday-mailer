@@ -8,6 +8,7 @@ namespace UnitTests
     [TestClass]
     public class UnitTest1
     {
+
         [TestMethod]
         public void DatabaseTests()
         {
@@ -20,12 +21,6 @@ namespace UnitTests
             foreach (Contact contact in contactList)
             {
                 Assert.IsNotNull(contact);
-            }
-   
-            //Correct Values in Contact List
-            foreach (Contact contact in contactList)
-            {
-                Console.WriteLine(contact);
             }
 
         }

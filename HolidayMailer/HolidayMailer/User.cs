@@ -9,7 +9,7 @@ namespace HolidayMailer
 
     public class User : Entity 
     {
-        private string _password;
+        private string password;
 
         public User(string lastName, string firstName,
             string email) : base(lastName, firstName, email)
@@ -20,13 +20,13 @@ namespace HolidayMailer
             string email, string password)
             : base(lastName, firstName, email)
         {
-            _password = password;
+            this.password = password;
         }
 
         public string Password
         {
-            get { return _password; }
-            set { _password = value; }
+            get { return password; }
+            set { password = value; }
         }
     }
 }
