@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 using System.IO;
+using System.Collections;
 
 
 namespace HolidayMailer
 {
-    class DatabaseManager
+    public class DatabaseManager
     {
+
         private String dbfilename = "HolidayMailer.db";
         private String connectionString = "Data Source=HolidayMailer.db;Version=3;Compress=true";
         private SQLiteConnection connection;
@@ -45,14 +47,42 @@ namespace HolidayMailer
 
             executeQuery(sql);
         }
-        public void retrieveContacts()
+        public List<Contact> retrieveContacts()
         {
-            command = new SQLiteCommand("SELECT * FROM default_user;");
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
             DataTable dt = new DataTable();
+            List<Contact> contactList = new List<Contact>();
+            Object[] contactData;
+
+            int i;
+
+            connection = new SQLiteConnection(connectionString);
+            connection.Open();
+            command = new SQLiteCommand("SELECT * FROM default_user;",
+                connection);
+            SQLiteDataAdapter da = new SQLiteDataAdapter();
+
             da.SelectCommand = command;
             da.Fill(dt);
 
+            
+            foreach (DataRow row in dt.Rows)
+            {
+                contactData = new Object[4];
+                i = 0;
+                foreach (DataColumn column in dt.Columns)
+                {
+                    contactData[i] = row[column];
+                    i++;
+                }
+
+                contactList.Add(new Contact((string)contactData[0],
+                    (string)contactData[1],
+                    (string)contactData[2],
+                    (bool)contactData[3]));
+            }
+            connection.Close();
+
+            return contactList;
         }
 
         private bool createDatabase()
@@ -90,5 +120,6 @@ namespace HolidayMailer
 
             executeQuery(sql);
         }
+
     }
 }

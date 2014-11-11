@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HolidayMailer
 {
@@ -31,12 +32,16 @@ namespace HolidayMailer
             try
             {
                 database.add(textBoxLastName.Text, textBoxFirstName.Text,
-                    textBoxEmail.Text, false);
-                MessageBox.Show("Added.");
+                    textBoxEmail.Text, checkBoxPreviousContact.Checked);
+                MessageBox.Show("Contact added.");
             }
             catch (Exception excep)
             {
-                MessageBox.Show("Failed to add contact");
+                MessageBox.Show("Error: Contact already exists.",
+                    "Duplicate Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                using (StreamWriter writer = new StreamWriter("errorlog.txt"))
+                { writer.WriteLine(excep); }
             }
         }
     }

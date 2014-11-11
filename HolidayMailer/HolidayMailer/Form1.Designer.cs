@@ -109,7 +109,7 @@
             this.mainWindow.Panel2.Controls.Add(this.listViewContacts);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.mainWindow.Size = new System.Drawing.Size(921, 548);
-            this.mainWindow.SplitterDistance = 447;
+            this.mainWindow.SplitterDistance = 444;
             this.mainWindow.TabIndex = 1;
             // 
             // buttonSend
@@ -195,6 +195,9 @@
             // 
             // pictureBoxPreview
             // 
+            this.pictureBoxPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPreview.Location = new System.Drawing.Point(147, 24);
             this.pictureBoxPreview.Name = "pictureBoxPreview";
