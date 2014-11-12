@@ -10,6 +10,11 @@ namespace HolidayMailer
     {
         protected string lastName, firstName, email;
 
+        public Entity()
+        {
+
+        }
+
         public Entity(string lastName, string firstName, string email)
         {
             this.lastName = lastName;

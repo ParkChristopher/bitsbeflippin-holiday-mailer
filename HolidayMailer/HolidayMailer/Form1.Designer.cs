@@ -30,6 +30,7 @@
         {
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.menuBarFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
@@ -73,9 +74,18 @@
             // 
             // menuBarFile
             // 
+            this.menuBarFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUserToolStripMenuItem});
             this.menuBarFile.Name = "menuBarFile";
             this.menuBarFile.Size = new System.Drawing.Size(37, 20);
             this.menuBarFile.Text = "File";
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // menuBarEdit
             // 
@@ -124,6 +134,7 @@
             this.buttonSend.TabIndex = 5;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // groupBoxSendTo
             // 
@@ -324,6 +335,7 @@
         private System.Windows.Forms.ColumnHeader columnLastName;
         private System.Windows.Forms.ColumnHeader columnEmail;
         private System.Windows.Forms.ColumnHeader columnPrevious;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
 
     }
 }

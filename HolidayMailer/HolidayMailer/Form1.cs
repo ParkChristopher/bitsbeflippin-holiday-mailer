@@ -11,7 +11,11 @@ using System.Windows.Forms;
 namespace HolidayMailer
 {
     public partial class Form1 : Form
-    {        
+    {
+        NetworkManager mailer;
+        List<Contact> contactList;
+        User currentUser;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +46,7 @@ namespace HolidayMailer
         private void loadContacts()
         {
             DatabaseManager database = new DatabaseManager();
-            List<Contact> contactList;
+            //List<Contact> contactList;//moved this to be class wide as I need access to it in another control
             
             contactList = database.retrieveContacts();
 
@@ -63,5 +67,46 @@ namespace HolidayMailer
             listViewContacts.Items.Clear();
         }
 
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            initUser();
+        }
+
+        private void initUser()
+        {
+            User newUser = new User();
+            userForm userForm = new userForm(newUser);
+            userForm.ShowDialog();
+
+            //currentUser = userForm.User;
+
+            newUser = userForm.User;
+
+            if (newUser == null)
+                MessageBox.Show("User was not initialized correctly.");
+
+            else
+                currentUser = newUser;
+        }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            sendEmails();
+        }
+
+        private void sendEmails()
+        {
+            if (currentUser.EmailService == "Gmail")
+                mailer = new GmailManager(currentUser, contactList, "Some Subject", "Some body");
+
+            if (currentUser.EmailService == "Hotmail")
+                mailer = new HotmailManager(currentUser, contactList, "Some Subject", "Some body");
+
+            if (currentUser.EmailService == "Yahoo")
+                mailer = new YahooManager(currentUser, contactList, "Some Subject", "Some body");
+
+            if (mailer != null)
+                mailer.send();
+        }
     }
 }

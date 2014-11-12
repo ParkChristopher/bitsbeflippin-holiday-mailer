@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 namespace HolidayMailer
 {
 
-    public class User : Entity 
+    public class User : Entity
     {
         private string password;
+        private string emailService;
+
+        public User()
+        {
+
+        }
 
         public User(string lastName, string firstName,
-            string email) : base(lastName, firstName, email)
+            string email)
+            : base(lastName, firstName, email)
         {
         }
 
@@ -27,6 +34,31 @@ namespace HolidayMailer
         {
             get { return password; }
             set { password = value; }
+        }
+
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
+        }
+
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public string EmailService
+        {
+            get { return emailService; }
+            set { emailService = value; }
         }
     }
 }

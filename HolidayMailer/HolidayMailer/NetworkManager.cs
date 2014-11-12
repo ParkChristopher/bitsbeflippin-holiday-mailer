@@ -14,7 +14,8 @@ namespace HolidayMailer
 {
     abstract class NetworkManager
     {
-        protected Contact[] contacts;
+        //protected Contact[] contacts;
+        protected List<Contact> contacts;
         protected SmtpClient smtp;
         protected MailMessage message;
         protected string fromName;
@@ -37,11 +38,13 @@ namespace HolidayMailer
         public void send()
         {
             int i;
-            Contact current;
+            
 
-            for (i = 0; i < contacts.Length; i++ )
+
+
+            //for (i = 0; i < contacts.Length; i++ )
+            foreach (Contact current in contacts)
             {
-                current = contacts[i];
                 toAddress = current.Email;
 
                 message = new MailMessage(fromAddress, toAddress);
@@ -59,12 +62,11 @@ namespace HolidayMailer
                 }
             }
         }
-
     }
 
     class GmailManager : NetworkManager
     {
-        public GmailManager(User theSender, Contact[] contacts, string subject, string body)
+        public GmailManager(User theSender, List<Contact> contacts, string subject, string body)
         {
             this.body = body;
             this.fromName = theSender.FirstName + " " + theSender.LastName;
@@ -92,7 +94,7 @@ namespace HolidayMailer
 
     class HotmailManager : NetworkManager
     {
-        public HotmailManager(User theSender, Contact[] contacts, string subject, string body)
+        public HotmailManager(User theSender, List<Contact> contacts, string subject, string body)
         {
             this.body = body;
             this.fromName = theSender.FirstName + " " + theSender.LastName;
@@ -126,7 +128,7 @@ namespace HolidayMailer
     class YahooManager : NetworkManager
     {
         protected string fromAddressPrefix;
-        public YahooManager(User theSender, Contact[] contacts, string subject, string body)
+        public YahooManager(User theSender, List<Contact> contacts, string subject, string body)
         { 
             this.fromName = theSender.FirstName + " " + theSender.LastName;
             this.fromAddress = theSender.Email;
