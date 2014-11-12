@@ -34,7 +34,8 @@ namespace HolidayMailer
             FormAddContact addContact = new FormAddContact();
             addContact.Owner = this;
             addContact.ShowDialog();
-
+            clearContacts();
+            loadContacts();
             //Set available controls here
         }
 
@@ -55,6 +56,11 @@ namespace HolidayMailer
                 listViewContacts.Items.Add(row);
             }
             
+        }
+
+        private void clearContacts()
+        {
+            listViewContacts.Items.Clear();
         }
 
     }

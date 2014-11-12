@@ -55,7 +55,7 @@ namespace HolidayMailer
 
             int i;
 
-            connection = new SQLiteConnection(connectionString);
+            setConnection();
             connection.Open();
             command = new SQLiteCommand("SELECT * FROM default_user;",
                 connection);
