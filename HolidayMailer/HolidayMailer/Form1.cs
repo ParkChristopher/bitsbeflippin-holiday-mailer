@@ -67,7 +67,7 @@ namespace HolidayMailer
             listViewContacts.Items.Clear();
         }
 
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolstripMainSender_Click(object sender, EventArgs e)
         {
             initUser();
         }

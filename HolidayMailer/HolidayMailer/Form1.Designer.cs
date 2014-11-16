@@ -30,7 +30,7 @@
         {
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.menuBarFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolstripMainSender = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
@@ -75,17 +75,17 @@
             // menuBarFile
             // 
             this.menuBarFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addUserToolStripMenuItem});
+            this.toolstripMainSender});
             this.menuBarFile.Name = "menuBarFile";
             this.menuBarFile.Size = new System.Drawing.Size(37, 20);
             this.menuBarFile.Text = "File";
             // 
-            // addUserToolStripMenuItem
+            // toolstripMainSender
             // 
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.addUserToolStripMenuItem.Text = "Add User";
-            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
+            this.toolstripMainSender.Name = "toolstripMainSender";
+            this.toolstripMainSender.Size = new System.Drawing.Size(152, 22);
+            this.toolstripMainSender.Text = "Enter User";
+            this.toolstripMainSender.Click += new System.EventHandler(this.toolstripMainSender_Click);
             // 
             // menuBarEdit
             // 
@@ -335,7 +335,7 @@
         private System.Windows.Forms.ColumnHeader columnLastName;
         private System.Windows.Forms.ColumnHeader columnEmail;
         private System.Windows.Forms.ColumnHeader columnPrevious;
-        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolstripMainSender;
 
     }
 }

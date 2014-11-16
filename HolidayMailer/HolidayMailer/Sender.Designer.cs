@@ -59,9 +59,9 @@
             "Gmail",
             "Hotmail",
             "Yahoo"});
-            this.comboBoxProviders.Location = new System.Drawing.Point(12, 89);
+            this.comboBoxProviders.Location = new System.Drawing.Point(9, 137);
             this.comboBoxProviders.Name = "comboBoxProviders";
-            this.comboBoxProviders.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxProviders.Size = new System.Drawing.Size(100, 21);
             this.comboBoxProviders.TabIndex = 1;
             this.comboBoxProviders.Text = "Gmail";
             // 
@@ -69,22 +69,22 @@
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(12, 25);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(172, 20);
             this.textBoxFirstName.TabIndex = 2;
             this.textBoxFirstName.Text = "Ron";
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(123, 25);
+            this.textBoxLastName.Location = new System.Drawing.Point(195, 25);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(124, 20);
             this.textBoxLastName.TabIndex = 4;
             this.textBoxLastName.Text = "Burgundy";
             // 
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(123, 9);
+            this.labelLastName.Location = new System.Drawing.Point(192, 9);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(58, 13);
             this.labelLastName.TabIndex = 3;
@@ -94,7 +94,7 @@
             // labelEmailProvider
             // 
             this.labelEmailProvider.AutoSize = true;
-            this.labelEmailProvider.Location = new System.Drawing.Point(15, 70);
+            this.labelEmailProvider.Location = new System.Drawing.Point(12, 118);
             this.labelEmailProvider.Name = "labelEmailProvider";
             this.labelEmailProvider.Size = new System.Drawing.Size(74, 13);
             this.labelEmailProvider.TabIndex = 5;
@@ -102,16 +102,16 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(12, 139);
+            this.textBoxEmail.Location = new System.Drawing.Point(12, 81);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(172, 20);
             this.textBoxEmail.TabIndex = 7;
             this.textBoxEmail.Text = "email@email.com";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(12, 123);
+            this.labelEmail.Location = new System.Drawing.Point(12, 65);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(73, 13);
             this.labelEmail.TabIndex = 6;
@@ -119,16 +119,16 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(123, 139);
+            this.textBoxPassword.Location = new System.Drawing.Point(195, 81);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(124, 20);
             this.textBoxPassword.TabIndex = 9;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(123, 123);
+            this.labelPassword.Location = new System.Drawing.Point(192, 65);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(53, 13);
             this.labelPassword.TabIndex = 8;
@@ -136,9 +136,9 @@
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(12, 174);
+            this.buttonAccept.Location = new System.Drawing.Point(116, 135);
             this.buttonAccept.Name = "buttonAccept";
-            this.buttonAccept.Size = new System.Drawing.Size(73, 23);
+            this.buttonAccept.Size = new System.Drawing.Size(64, 23);
             this.buttonAccept.TabIndex = 10;
             this.buttonAccept.Text = "Accept";
             this.buttonAccept.UseVisualStyleBackColor = true;
@@ -146,18 +146,18 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(91, 174);
+            this.buttonCancel.Location = new System.Drawing.Point(257, 135);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(64, 23);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(172, 174);
+            this.buttonClear.Location = new System.Drawing.Point(186, 135);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.Size = new System.Drawing.Size(64, 23);
             this.buttonClear.TabIndex = 12;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 231);
+            this.ClientSize = new System.Drawing.Size(333, 175);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAccept);
@@ -181,7 +181,7 @@
             this.Controls.Add(this.comboBoxProviders);
             this.Controls.Add(this.labelFirstName);
             this.Name = "userForm";
-            this.Text = "User";
+            this.Text = "Sender";
             this.ResumeLayout(false);
             this.PerformLayout();
 
