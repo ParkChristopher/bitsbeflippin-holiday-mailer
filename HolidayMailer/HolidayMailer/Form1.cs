@@ -99,5 +99,16 @@ namespace HolidayMailer
             if (mailer != null)
                 mailer.send();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Holiday Mailer\n\n" +
+                "Team: Bits Be Flippin\'\n\n" +
+                "Members:\n" +
+                "Sami Awwad\n" +
+                "Chris Park\n" +
+                "Nathan Pilgrim\n\n" +
+                "Version: 1", "About the Developers", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

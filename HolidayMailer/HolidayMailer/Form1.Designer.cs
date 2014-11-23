@@ -43,14 +43,15 @@
             this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
-            this.buttonEditSelected = new System.Windows.Forms.Button();
-            this.buttonDeleteSelected = new System.Windows.Forms.Button();
-            this.buttonAddContact = new System.Windows.Forms.Button();
             this.dataGridViewContactList = new System.Windows.Forms.DataGridView();
             this.ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPreviousSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonEditSelected = new System.Windows.Forms.Button();
+            this.buttonDeleteSelected = new System.Windows.Forms.Button();
+            this.buttonAddContact = new System.Windows.Forms.Button();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -96,6 +97,8 @@
             // 
             // menuBarHelp
             // 
+            this.menuBarHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.menuBarHelp.Name = "menuBarHelp";
             this.menuBarHelp.Size = new System.Drawing.Size(44, 20);
             this.menuBarHelp.Text = "Help";
@@ -108,6 +111,7 @@
             // 
             // mainWindow.Panel1
             // 
+            this.mainWindow.Panel1.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
             this.mainWindow.Panel1.Controls.Add(this.buttonSend);
             this.mainWindow.Panel1.Controls.Add(this.groupBoxSendTo);
             this.mainWindow.Panel1.Controls.Add(this.buttonRemoveAttachment);
@@ -118,13 +122,14 @@
             // 
             // mainWindow.Panel2
             // 
+            this.mainWindow.Panel2.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
             this.mainWindow.Panel2.Controls.Add(this.dataGridViewContactList);
             this.mainWindow.Panel2.Controls.Add(this.buttonEditSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonDeleteSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.mainWindow.Size = new System.Drawing.Size(921, 548);
-            this.mainWindow.SplitterDistance = 219;
+            this.mainWindow.SplitterDistance = 218;
             this.mainWindow.TabIndex = 1;
             // 
             // buttonSend
@@ -218,34 +223,6 @@
             this.pictureBoxPreview.TabIndex = 0;
             this.pictureBoxPreview.TabStop = false;
             // 
-            // buttonEditSelected
-            // 
-            this.buttonEditSelected.Location = new System.Drawing.Point(112, 472);
-            this.buttonEditSelected.Name = "buttonEditSelected";
-            this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
-            this.buttonEditSelected.TabIndex = 3;
-            this.buttonEditSelected.Text = "Edit Selected";
-            this.buttonEditSelected.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteSelected
-            // 
-            this.buttonDeleteSelected.Location = new System.Drawing.Point(9, 472);
-            this.buttonDeleteSelected.Name = "buttonDeleteSelected";
-            this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
-            this.buttonDeleteSelected.TabIndex = 2;
-            this.buttonDeleteSelected.Text = "Delete Selected";
-            this.buttonDeleteSelected.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddContact
-            // 
-            this.buttonAddContact.Location = new System.Drawing.Point(200, 472);
-            this.buttonAddContact.Name = "buttonAddContact";
-            this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddContact.TabIndex = 1;
-            this.buttonAddContact.Text = "Add Contact";
-            this.buttonAddContact.UseVisualStyleBackColor = true;
-            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
-            // 
             // dataGridViewContactList
             // 
             this.dataGridViewContactList.AllowUserToAddRows = false;
@@ -292,6 +269,42 @@
             this.columnPreviousSender.HeaderText = "Previous";
             this.columnPreviousSender.Name = "columnPreviousSender";
             this.columnPreviousSender.ReadOnly = true;
+            // 
+            // buttonEditSelected
+            // 
+            this.buttonEditSelected.Location = new System.Drawing.Point(112, 472);
+            this.buttonEditSelected.Name = "buttonEditSelected";
+            this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
+            this.buttonEditSelected.TabIndex = 3;
+            this.buttonEditSelected.Text = "Edit Selected";
+            this.buttonEditSelected.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteSelected
+            // 
+            this.buttonDeleteSelected.Location = new System.Drawing.Point(9, 472);
+            this.buttonDeleteSelected.Name = "buttonDeleteSelected";
+            this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
+            this.buttonDeleteSelected.TabIndex = 2;
+            this.buttonDeleteSelected.Text = "Delete Selected";
+            this.buttonDeleteSelected.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddContact
+            // 
+            this.buttonAddContact.Location = new System.Drawing.Point(200, 472);
+            this.buttonAddContact.Name = "buttonAddContact";
+            this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddContact.TabIndex = 1;
+            this.buttonAddContact.Text = "&Add Contact";
+            this.buttonAddContact.UseVisualStyleBackColor = true;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -346,6 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 
     }
 }
