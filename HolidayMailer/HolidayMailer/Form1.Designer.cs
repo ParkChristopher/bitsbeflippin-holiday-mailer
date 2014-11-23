@@ -46,11 +46,11 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.listViewContacts = new System.Windows.Forms.ListView();
-            this.columnFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnPrevious = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataGridViewContactList = new System.Windows.Forms.DataGridView();
+            this.ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPreviousSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -58,6 +58,7 @@
             this.mainWindow.SuspendLayout();
             this.groupBoxSendTo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).BeginInit();
             this.SuspendLayout();
             // 
             // menuBar
@@ -83,7 +84,7 @@
             // toolstripMainSender
             // 
             this.toolstripMainSender.Name = "toolstripMainSender";
-            this.toolstripMainSender.Size = new System.Drawing.Size(152, 22);
+            this.toolstripMainSender.Size = new System.Drawing.Size(127, 22);
             this.toolstripMainSender.Text = "Enter User";
             this.toolstripMainSender.Click += new System.EventHandler(this.toolstripMainSender_Click);
             // 
@@ -117,13 +118,13 @@
             // 
             // mainWindow.Panel2
             // 
+            this.mainWindow.Panel2.Controls.Add(this.dataGridViewContactList);
             this.mainWindow.Panel2.Controls.Add(this.buttonEditSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonDeleteSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
-            this.mainWindow.Panel2.Controls.Add(this.listViewContacts);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.mainWindow.Size = new System.Drawing.Size(921, 548);
-            this.mainWindow.SplitterDistance = 444;
+            this.mainWindow.SplitterDistance = 219;
             this.mainWindow.TabIndex = 1;
             // 
             // buttonSend
@@ -183,7 +184,7 @@
             // 
             // buttonRemoveAttachment
             // 
-            this.buttonRemoveAttachment.Location = new System.Drawing.Point(228, 439);
+            this.buttonRemoveAttachment.Location = new System.Drawing.Point(97, 472);
             this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
             this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
             this.buttonRemoveAttachment.TabIndex = 3;
@@ -192,7 +193,7 @@
             // 
             // buttonAttachFile
             // 
-            this.buttonAttachFile.Location = new System.Drawing.Point(147, 439);
+            this.buttonAttachFile.Location = new System.Drawing.Point(16, 472);
             this.buttonAttachFile.Name = "buttonAttachFile";
             this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
             this.buttonAttachFile.TabIndex = 2;
@@ -210,13 +211,10 @@
             // 
             // pictureBoxPreview
             // 
-            this.pictureBoxPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPreview.Location = new System.Drawing.Point(147, 24);
+            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 203);
             this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.Size = new System.Drawing.Size(287, 409);
+            this.pictureBoxPreview.Size = new System.Drawing.Size(197, 263);
             this.pictureBoxPreview.TabIndex = 0;
             this.pictureBoxPreview.TabStop = false;
             // 
@@ -240,7 +238,7 @@
             // 
             // buttonAddContact
             // 
-            this.buttonAddContact.Location = new System.Drawing.Point(386, 472);
+            this.buttonAddContact.Location = new System.Drawing.Point(200, 472);
             this.buttonAddContact.Name = "buttonAddContact";
             this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
             this.buttonAddContact.TabIndex = 1;
@@ -248,41 +246,52 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-            // listViewContacts
+            // dataGridViewContactList
             // 
-            this.listViewContacts.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listViewContacts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnFirstName,
+            this.dataGridViewContactList.AllowUserToAddRows = false;
+            this.dataGridViewContactList.AllowUserToDeleteRows = false;
+            this.dataGridViewContactList.AllowUserToResizeRows = false;
+            this.dataGridViewContactList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewContactList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnFirstName,
             this.columnLastName,
             this.columnEmail,
-            this.columnPrevious});
-            this.listViewContacts.FullRowSelect = true;
-            this.listViewContacts.Location = new System.Drawing.Point(9, 24);
-            this.listViewContacts.Name = "listViewContacts";
-            this.listViewContacts.Size = new System.Drawing.Size(450, 440);
-            this.listViewContacts.TabIndex = 0;
-            this.listViewContacts.UseCompatibleStateImageBehavior = false;
-            this.listViewContacts.View = System.Windows.Forms.View.Details;
+            this.columnPreviousSender});
+            this.dataGridViewContactList.Location = new System.Drawing.Point(9, 12);
+            this.dataGridViewContactList.Name = "dataGridViewContactList";
+            this.dataGridViewContactList.ReadOnly = true;
+            this.dataGridViewContactList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewContactList.Size = new System.Drawing.Size(677, 454);
+            this.dataGridViewContactList.TabIndex = 4;
             // 
-            // columnFirstName
+            // ColumnFirstName
             // 
-            this.columnFirstName.Text = "First Name";
-            this.columnFirstName.Width = 78;
+            this.ColumnFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnFirstName.HeaderText = "First Name";
+            this.ColumnFirstName.Name = "ColumnFirstName";
+            this.ColumnFirstName.ReadOnly = true;
             // 
             // columnLastName
             // 
-            this.columnLastName.Text = "Last Name";
-            this.columnLastName.Width = 87;
+            this.columnLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnLastName.HeaderText = "Last Name";
+            this.columnLastName.Name = "columnLastName";
+            this.columnLastName.ReadOnly = true;
             // 
             // columnEmail
             // 
-            this.columnEmail.Text = "Email";
-            this.columnEmail.Width = 181;
+            this.columnEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnEmail.HeaderText = "Email";
+            this.columnEmail.Name = "columnEmail";
+            this.columnEmail.ReadOnly = true;
             // 
-            // columnPrevious
+            // columnPreviousSender
             // 
-            this.columnPrevious.Text = "Previous Email Recieved";
-            this.columnPrevious.Width = 99;
+            this.columnPreviousSender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnPreviousSender.HeaderText = "Previous";
+            this.columnPreviousSender.Name = "columnPreviousSender";
+            this.columnPreviousSender.ReadOnly = true;
             // 
             // Form1
             // 
@@ -306,6 +315,7 @@
             this.groupBoxSendTo.ResumeLayout(false);
             this.groupBoxSendTo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuBarHelp;
         private System.Windows.Forms.SplitContainer mainWindow;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
-        private System.Windows.Forms.ListView listViewContacts;
         private System.Windows.Forms.GroupBox groupBoxSendTo;
         private System.Windows.Forms.RadioButton radioButtonSendPrevious;
         private System.Windows.Forms.RadioButton radioButtonSendSelected;
@@ -331,11 +340,12 @@
         private System.Windows.Forms.Button buttonDeleteSelected;
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonSend;
-        private System.Windows.Forms.ColumnHeader columnFirstName;
-        private System.Windows.Forms.ColumnHeader columnLastName;
-        private System.Windows.Forms.ColumnHeader columnEmail;
-        private System.Windows.Forms.ColumnHeader columnPrevious;
         private System.Windows.Forms.ToolStripMenuItem toolstripMainSender;
+        private System.Windows.Forms.DataGridView dataGridViewContactList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
 
     }
 }

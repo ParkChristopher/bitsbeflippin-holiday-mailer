@@ -46,25 +46,16 @@ namespace HolidayMailer
         private void loadContacts()
         {
             DatabaseManager database = new DatabaseManager();
-            //List<Contact> contactList;//moved this to be class wide as I need access to it in another control
-            
             contactList = database.retrieveContacts();
-
-            ListViewItem row;
-            foreach (Contact contact in contactList)
-            { 
-                row = new ListViewItem(contact.FirstName);
-                row.SubItems.Add(contact.LastName);
-                row.SubItems.Add(contact.Email);
-
-                listViewContacts.Items.Add(row);
-            }
             
+            foreach (Contact contact in contactList)
+                dataGridViewContactList.Rows.Add(contact.FirstName, contact.LastName,
+                    contact.Email, contact.SentPrevious);
         }
 
         private void clearContacts()
         {
-            listViewContacts.Items.Clear();
+            dataGridViewContactList.Rows.Clear();
         }
 
         private void toolstripMainSender_Click(object sender, EventArgs e)
