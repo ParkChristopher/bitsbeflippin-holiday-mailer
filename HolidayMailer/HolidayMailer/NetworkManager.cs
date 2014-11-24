@@ -37,7 +37,7 @@ namespace HolidayMailer
 
         public void send()
         {
-            int i;
+            //int i;
             
 
 
