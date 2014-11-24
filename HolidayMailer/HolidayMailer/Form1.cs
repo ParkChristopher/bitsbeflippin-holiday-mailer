@@ -42,7 +42,6 @@ namespace HolidayMailer
             addContact.ShowDialog();
             clearContacts();
             loadContacts();
-            //Set available controls here
         }
 
         private void loadContacts()
@@ -69,10 +68,8 @@ namespace HolidayMailer
         {
             User newUser = new User();
             userForm userForm = new userForm(newUser);
+            
             userForm.ShowDialog();
-
-            //currentUser = userForm.User;
-
             newUser = userForm.User;
 
             if (newUser == null)
@@ -117,11 +114,9 @@ namespace HolidayMailer
         {
             String selected = comboBoxTemplate.Text;
 
-            //MessageBox.Show(selected);
-
             pictureBoxPreview.Image = Image.FromFile(selected);
-            //pictureBoxPreview.Image = Image.FromFile("RedAndBlackTemplate.jpg");
         }
+
         private void buttonDeleteSelected_Click(object sender, EventArgs e)
         {
             string message = "Are you sure you want to " +

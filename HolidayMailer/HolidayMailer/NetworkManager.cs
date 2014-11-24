@@ -14,7 +14,6 @@ namespace HolidayMailer
 {
     abstract class NetworkManager
     {
-        //protected Contact[] contacts;
         protected List<Contact> contacts;
         protected SmtpClient smtp;
         protected MailMessage message;
@@ -37,12 +36,6 @@ namespace HolidayMailer
 
         public void send()
         {
-            //int i;
-            
-
-
-
-            //for (i = 0; i < contacts.Length; i++ )
             foreach (Contact current in contacts)
             {
                 toAddress = current.Email;
