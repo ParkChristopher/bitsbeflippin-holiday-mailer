@@ -34,6 +34,11 @@ namespace HolidayMailer
             executeQuery(sql);
         }
 
+        private void formatInput(string input)
+        {
+
+        }
+
         public void delete(string email)
         {
             string sql = "DELETE FROM default_user WHERE Email = \'" + email + "\';";
