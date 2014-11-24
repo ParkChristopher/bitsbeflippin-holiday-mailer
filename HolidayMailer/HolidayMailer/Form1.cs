@@ -110,5 +110,34 @@ namespace HolidayMailer
                 "Nathan Pilgrim\n\n" +
                 "Version: 1", "About the Developers", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+        private void buttonDeleteSelected_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to " +
+                             "delete the selected contact(s)";
+            string caption = "Confirmation";
+            DialogResult res; 
+
+            res = MessageBox.Show(message, caption, MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Exclamation);
+
+            if (res == DialogResult.OK)
+            {
+                string delContact = "";
+                DatabaseManager database = new DatabaseManager();
+
+                foreach (DataGridViewRow row in dataGridViewContactList.SelectedRows)
+                {
+                    delContact = row.Cells[2].Value.ToString();
+                    database.delete(delContact);
+                }
+
+                message = "Contact(s) Deleted";
+                MessageBox.Show(message, "", MessageBoxButtons.OK);
+                clearContacts();
+                loadContacts();
+            }
+
+        }
     }
 }
