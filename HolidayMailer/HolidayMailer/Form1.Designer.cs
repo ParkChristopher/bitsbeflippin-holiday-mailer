@@ -52,11 +52,8 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editSelectedContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
->>>>>>> origin/master
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -319,7 +316,6 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-<<<<<<< HEAD
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -334,8 +330,6 @@
             this.editSelectedContactsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.editSelectedContactsToolStripMenuItem.Text = "Edit Selected Contacts";
             // 
-=======
->>>>>>> origin/master
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
