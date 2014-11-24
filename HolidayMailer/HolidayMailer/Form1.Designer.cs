@@ -32,6 +32,7 @@
             this.menuBarFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstripMainSender = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
@@ -48,6 +49,7 @@
             this.buttonRemoveAttachment = new System.Windows.Forms.Button();
             this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.dataGridViewContactList = new System.Windows.Forms.DataGridView();
             this.ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,17 +58,14 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSelectedContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
             this.mainWindow.Panel2.SuspendLayout();
             this.mainWindow.SuspendLayout();
             this.groupBoxSendTo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).BeginInit();
             this.SuspendLayout();
             // 
             // menuBar
@@ -104,9 +103,15 @@
             this.menuBarEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editSelectedContactsToolStripMenuItem});
             this.menuBarEdit.Name = "menuBarEdit";
-            this.menuBarEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D)));
+            this.menuBarEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.menuBarEdit.Size = new System.Drawing.Size(39, 20);
             this.menuBarEdit.Text = "Edit";
+            // 
+            // editSelectedContactsToolStripMenuItem
+            // 
+            this.editSelectedContactsToolStripMenuItem.Name = "editSelectedContactsToolStripMenuItem";
+            this.editSelectedContactsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.editSelectedContactsToolStripMenuItem.Text = "Edit Selected Contacts";
             // 
             // menuBarHelp
             // 
@@ -156,9 +161,7 @@
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.mainWindow.Size = new System.Drawing.Size(980, 634);
-            this.mainWindow.SplitterDistance = 231;
-            this.mainWindow.Size = new System.Drawing.Size(921, 548);
-            this.mainWindow.SplitterDistance = 217;
+            this.mainWindow.SplitterDistance = 230;
             this.mainWindow.TabIndex = 1;
             // 
             // labelPreview
@@ -291,6 +294,16 @@
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "User";
             // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 353);
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.Size = new System.Drawing.Size(200, 240);
+            this.pictureBoxPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPreview.TabIndex = 0;
+            this.pictureBoxPreview.TabStop = false;
+            // 
             // dataGridViewContactList
             // 
             this.dataGridViewContactList.AllowUserToAddRows = false;
@@ -367,22 +380,6 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-            // pictureBoxPreview
-            // 
-            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 353);
-            this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.Size = new System.Drawing.Size(200, 240);
-            this.pictureBoxPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPreview.TabIndex = 0;
-            this.pictureBoxPreview.TabStop = false;
-            // 
-            // editSelectedContactsToolStripMenuItem
-            // 
-            this.editSelectedContactsToolStripMenuItem.Name = "editSelectedContactsToolStripMenuItem";
-            this.editSelectedContactsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.editSelectedContactsToolStripMenuItem.Text = "Edit Selected Contacts";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,8 +401,8 @@
             this.mainWindow.ResumeLayout(false);
             this.groupBoxSendTo.ResumeLayout(false);
             this.groupBoxSendTo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
