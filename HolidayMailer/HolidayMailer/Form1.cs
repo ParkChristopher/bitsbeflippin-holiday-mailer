@@ -32,7 +32,7 @@ namespace HolidayMailer
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void buttonAddContact_Click(object sender, EventArgs e)
@@ -121,7 +121,33 @@ namespace HolidayMailer
 
             pictureBoxPreview.Image = Image.FromFile(selected);
             //pictureBoxPreview.Image = Image.FromFile("RedAndBlackTemplate.jpg");
+        }
+        private void buttonDeleteSelected_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to " +
+                             "delete the selected contact(s)";
+            string caption = "Confirmation";
+            DialogResult res; 
 
+            res = MessageBox.Show(message, caption, MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Exclamation);
+
+            if (res == DialogResult.OK)
+            {
+                string delContact = "";
+                DatabaseManager database = new DatabaseManager();
+
+                foreach (DataGridViewRow row in dataGridViewContactList.SelectedRows)
+                {
+                    delContact = row.Cells[2].Value.ToString();
+                    database.delete(delContact);
+                }
+
+                message = "Contact(s) Deleted";
+                MessageBox.Show(message, "", MessageBoxButtons.OK);
+                clearContacts();
+                loadContacts();
+            }
 
         }
     }

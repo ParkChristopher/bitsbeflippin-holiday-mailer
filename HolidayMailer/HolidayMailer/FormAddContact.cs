@@ -20,9 +20,7 @@ namespace HolidayMailer
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Owner.Focus();
-            this.Dispose();
+            closeDialog();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -43,6 +41,17 @@ namespace HolidayMailer
                 using (StreamWriter writer = new StreamWriter("errorlog.txt"))
                 { writer.WriteLine(excep); }
             }
+
+            closeDialog();
         }
+
+        private void closeDialog()
+        {
+            this.Hide();
+            this.Owner.Focus();
+            this.Dispose();
+        }
+
+
     }
 }

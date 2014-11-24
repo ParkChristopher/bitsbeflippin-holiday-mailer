@@ -89,7 +89,7 @@
             // checkBoxPreviousContact
             // 
             this.checkBoxPreviousContact.AutoSize = true;
-            this.checkBoxPreviousContact.Location = new System.Drawing.Point(259, 31);
+            this.checkBoxPreviousContact.Location = new System.Drawing.Point(261, 31);
             this.checkBoxPreviousContact.Name = "checkBoxPreviousContact";
             this.checkBoxPreviousContact.Size = new System.Drawing.Size(107, 17);
             this.checkBoxPreviousContact.TabIndex = 5;
@@ -122,8 +122,10 @@
             // 
             // FormAddContact
             // 
+            this.AcceptButton = this.buttonAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(380, 108);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
