@@ -64,6 +64,7 @@
             // 
             // menuBar
             // 
+            this.menuBar.BackColor = System.Drawing.SystemColors.Control;
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuBarFile,
             this.menuBarEdit,
@@ -79,19 +80,22 @@
             this.menuBarFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolstripMainSender});
             this.menuBarFile.Name = "menuBarFile";
+            this.menuBarFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
             this.menuBarFile.Size = new System.Drawing.Size(37, 20);
             this.menuBarFile.Text = "File";
             // 
             // toolstripMainSender
             // 
             this.toolstripMainSender.Name = "toolstripMainSender";
-            this.toolstripMainSender.Size = new System.Drawing.Size(127, 22);
+            this.toolstripMainSender.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.toolstripMainSender.Size = new System.Drawing.Size(167, 22);
             this.toolstripMainSender.Text = "Enter User";
             this.toolstripMainSender.Click += new System.EventHandler(this.toolstripMainSender_Click);
             // 
             // menuBarEdit
             // 
             this.menuBarEdit.Name = "menuBarEdit";
+            this.menuBarEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.menuBarEdit.Size = new System.Drawing.Size(39, 20);
             this.menuBarEdit.Text = "Edit";
             // 
@@ -100,6 +104,7 @@
             this.menuBarHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.menuBarHelp.Name = "menuBarHelp";
+            this.menuBarHelp.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
             this.menuBarHelp.Size = new System.Drawing.Size(44, 20);
             this.menuBarHelp.Text = "Help";
             // 
@@ -138,7 +143,7 @@
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(81, 23);
             this.buttonSend.TabIndex = 5;
-            this.buttonSend.Text = "Send";
+            this.buttonSend.Text = "&Send";
             this.buttonSend.UseVisualStyleBackColor = true;
             this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
@@ -193,7 +198,7 @@
             this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
             this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
             this.buttonRemoveAttachment.TabIndex = 3;
-            this.buttonRemoveAttachment.Text = "Remove Attachment";
+            this.buttonRemoveAttachment.Text = "&Remove Attachment";
             this.buttonRemoveAttachment.UseVisualStyleBackColor = true;
             // 
             // buttonAttachFile
@@ -202,7 +207,7 @@
             this.buttonAttachFile.Name = "buttonAttachFile";
             this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
             this.buttonAttachFile.TabIndex = 2;
-            this.buttonAttachFile.Text = "Attach File";
+            this.buttonAttachFile.Text = "Attach &File";
             this.buttonAttachFile.UseVisualStyleBackColor = true;
             // 
             // labelUser
@@ -276,7 +281,7 @@
             this.buttonEditSelected.Name = "buttonEditSelected";
             this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
             this.buttonEditSelected.TabIndex = 3;
-            this.buttonEditSelected.Text = "Edit Selected";
+            this.buttonEditSelected.Text = "&Edit Selected";
             this.buttonEditSelected.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteSelected
@@ -285,7 +290,7 @@
             this.buttonDeleteSelected.Name = "buttonDeleteSelected";
             this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
             this.buttonDeleteSelected.TabIndex = 2;
-            this.buttonDeleteSelected.Text = "Delete Selected";
+            this.buttonDeleteSelected.Text = "&Delete Selected";
             this.buttonDeleteSelected.UseVisualStyleBackColor = true;
             // 
             // buttonAddContact

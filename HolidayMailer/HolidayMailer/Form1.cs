@@ -30,7 +30,7 @@ namespace HolidayMailer
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void buttonAddContact_Click(object sender, EventArgs e)
