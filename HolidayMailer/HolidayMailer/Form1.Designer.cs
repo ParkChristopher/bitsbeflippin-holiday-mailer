@@ -52,6 +52,7 @@
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -87,15 +88,17 @@
             // toolstripMainSender
             // 
             this.toolstripMainSender.Name = "toolstripMainSender";
-            this.toolstripMainSender.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.toolstripMainSender.Size = new System.Drawing.Size(167, 22);
+            this.toolstripMainSender.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.toolstripMainSender.Size = new System.Drawing.Size(169, 22);
             this.toolstripMainSender.Text = "Enter User";
             this.toolstripMainSender.Click += new System.EventHandler(this.toolstripMainSender_Click);
             // 
             // menuBarEdit
             // 
+            this.menuBarEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editSelectedContactsToolStripMenuItem});
             this.menuBarEdit.Name = "menuBarEdit";
-            this.menuBarEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+            this.menuBarEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D)));
             this.menuBarEdit.Size = new System.Drawing.Size(39, 20);
             this.menuBarEdit.Text = "Edit";
             // 
@@ -311,6 +314,12 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // editSelectedContactsToolStripMenuItem
+            // 
+            this.editSelectedContactsToolStripMenuItem.Name = "editSelectedContactsToolStripMenuItem";
+            this.editSelectedContactsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.editSelectedContactsToolStripMenuItem.Text = "Edit Selected Contacts";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +374,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editSelectedContactsToolStripMenuItem;
 
     }
 }
