@@ -21,6 +21,8 @@ namespace HolidayMailer
             InitializeComponent();
             loadContacts();
 
+            comboBoxTemplate.SelectedIndex = 0;
+
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -109,6 +111,18 @@ namespace HolidayMailer
                 "Chris Park\n" +
                 "Nathan Pilgrim\n\n" +
                 "Version: 1", "About the Developers", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void comboBoxTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selected = comboBoxTemplate.Text;
+
+            //MessageBox.Show(selected);
+
+            pictureBoxPreview.Image = Image.FromFile(selected);
+            //pictureBoxPreview.Image = Image.FromFile("RedAndBlackTemplate.jpg");
+
+
         }
     }
 }

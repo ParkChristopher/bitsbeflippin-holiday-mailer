@@ -63,9 +63,39 @@ namespace HolidayMailer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RedAndBlackTemplate {
+            get {
+                object obj = ResourceManager.GetObject("RedAndBlackTemplate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedTemplate {
+            get {
+                object obj = ResourceManager.GetObject("RedTemplate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap snowflakes {
             get {
                 object obj = ResourceManager.GetObject("snowflakes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap template1Test {
+            get {
+                object obj = ResourceManager.GetObject("template1Test", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

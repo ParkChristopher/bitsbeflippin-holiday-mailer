@@ -33,7 +33,13 @@
             this.toolstripMainSender = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
+            this.labelPreview = new System.Windows.Forms.Label();
+            this.labelCustomMessage = new System.Windows.Forms.Label();
+            this.labelTemplate = new System.Windows.Forms.Label();
+            this.textBoxCustomMessage = new System.Windows.Forms.TextBox();
+            this.comboBoxTemplate = new System.Windows.Forms.ComboBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.groupBoxSendTo = new System.Windows.Forms.GroupBox();
             this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
@@ -42,7 +48,6 @@
             this.buttonRemoveAttachment = new System.Windows.Forms.Button();
             this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
-            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.dataGridViewContactList = new System.Windows.Forms.DataGridView();
             this.ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +56,15 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
             this.mainWindow.Panel2.SuspendLayout();
             this.mainWindow.SuspendLayout();
             this.groupBoxSendTo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // menuBar
@@ -70,7 +75,7 @@
             this.menuBarHelp});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(921, 24);
+            this.menuBar.Size = new System.Drawing.Size(980, 24);
             this.menuBar.TabIndex = 0;
             this.menuBar.Text = "menuStrip1";
             // 
@@ -103,6 +108,14 @@
             this.menuBarHelp.Size = new System.Drawing.Size(44, 20);
             this.menuBarHelp.Text = "Help";
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // mainWindow
             // 
             this.mainWindow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,6 +125,11 @@
             // mainWindow.Panel1
             // 
             this.mainWindow.Panel1.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
+            this.mainWindow.Panel1.Controls.Add(this.labelPreview);
+            this.mainWindow.Panel1.Controls.Add(this.labelCustomMessage);
+            this.mainWindow.Panel1.Controls.Add(this.labelTemplate);
+            this.mainWindow.Panel1.Controls.Add(this.textBoxCustomMessage);
+            this.mainWindow.Panel1.Controls.Add(this.comboBoxTemplate);
             this.mainWindow.Panel1.Controls.Add(this.buttonSend);
             this.mainWindow.Panel1.Controls.Add(this.groupBoxSendTo);
             this.mainWindow.Panel1.Controls.Add(this.buttonRemoveAttachment);
@@ -128,13 +146,61 @@
             this.mainWindow.Panel2.Controls.Add(this.buttonDeleteSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.mainWindow.Size = new System.Drawing.Size(921, 548);
-            this.mainWindow.SplitterDistance = 218;
+            this.mainWindow.Size = new System.Drawing.Size(980, 634);
+            this.mainWindow.SplitterDistance = 231;
             this.mainWindow.TabIndex = 1;
+            // 
+            // labelPreview
+            // 
+            this.labelPreview.AutoSize = true;
+            this.labelPreview.Location = new System.Drawing.Point(15, 337);
+            this.labelPreview.Name = "labelPreview";
+            this.labelPreview.Size = new System.Drawing.Size(45, 13);
+            this.labelPreview.TabIndex = 10;
+            this.labelPreview.Text = "Preview";
+            // 
+            // labelCustomMessage
+            // 
+            this.labelCustomMessage.AutoSize = true;
+            this.labelCustomMessage.Location = new System.Drawing.Point(15, 224);
+            this.labelCustomMessage.Name = "labelCustomMessage";
+            this.labelCustomMessage.Size = new System.Drawing.Size(88, 13);
+            this.labelCustomMessage.TabIndex = 9;
+            this.labelCustomMessage.Text = "Custom Message";
+            // 
+            // labelTemplate
+            // 
+            this.labelTemplate.AutoSize = true;
+            this.labelTemplate.Location = new System.Drawing.Point(15, 170);
+            this.labelTemplate.Name = "labelTemplate";
+            this.labelTemplate.Size = new System.Drawing.Size(51, 13);
+            this.labelTemplate.TabIndex = 8;
+            this.labelTemplate.Text = "Template";
+            // 
+            // textBoxCustomMessage
+            // 
+            this.textBoxCustomMessage.Location = new System.Drawing.Point(16, 240);
+            this.textBoxCustomMessage.Multiline = true;
+            this.textBoxCustomMessage.Name = "textBoxCustomMessage";
+            this.textBoxCustomMessage.Size = new System.Drawing.Size(197, 82);
+            this.textBoxCustomMessage.TabIndex = 7;
+            // 
+            // comboBoxTemplate
+            // 
+            this.comboBoxTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTemplate.FormattingEnabled = true;
+            this.comboBoxTemplate.Items.AddRange(new object[] {
+            "RedTemplate.jpg",
+            "RedAndBlackTemplate.jpg"});
+            this.comboBoxTemplate.Location = new System.Drawing.Point(16, 186);
+            this.comboBoxTemplate.Name = "comboBoxTemplate";
+            this.comboBoxTemplate.Size = new System.Drawing.Size(138, 21);
+            this.comboBoxTemplate.TabIndex = 6;
+            this.comboBoxTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBoxTemplate_SelectedIndexChanged);
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(16, 144);
+            this.buttonSend.Location = new System.Drawing.Point(16, 130);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(81, 23);
             this.buttonSend.TabIndex = 5;
@@ -147,7 +213,7 @@
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendPrevious);
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendSelected);
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendAll);
-            this.groupBoxSendTo.Location = new System.Drawing.Point(16, 42);
+            this.groupBoxSendTo.Location = new System.Drawing.Point(16, 28);
             this.groupBoxSendTo.Name = "groupBoxSendTo";
             this.groupBoxSendTo.Size = new System.Drawing.Size(125, 96);
             this.groupBoxSendTo.TabIndex = 4;
@@ -189,7 +255,7 @@
             // 
             // buttonRemoveAttachment
             // 
-            this.buttonRemoveAttachment.Location = new System.Drawing.Point(97, 472);
+            this.buttonRemoveAttachment.Location = new System.Drawing.Point(97, 599);
             this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
             this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
             this.buttonRemoveAttachment.TabIndex = 3;
@@ -198,7 +264,7 @@
             // 
             // buttonAttachFile
             // 
-            this.buttonAttachFile.Location = new System.Drawing.Point(16, 472);
+            this.buttonAttachFile.Location = new System.Drawing.Point(16, 599);
             this.buttonAttachFile.Name = "buttonAttachFile";
             this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
             this.buttonAttachFile.TabIndex = 2;
@@ -213,15 +279,6 @@
             this.labelUser.Size = new System.Drawing.Size(29, 13);
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "User";
-            // 
-            // pictureBoxPreview
-            // 
-            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 203);
-            this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.Size = new System.Drawing.Size(197, 263);
-            this.pictureBoxPreview.TabIndex = 0;
-            this.pictureBoxPreview.TabStop = false;
             // 
             // dataGridViewContactList
             // 
@@ -239,7 +296,7 @@
             this.dataGridViewContactList.Name = "dataGridViewContactList";
             this.dataGridViewContactList.ReadOnly = true;
             this.dataGridViewContactList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewContactList.Size = new System.Drawing.Size(677, 454);
+            this.dataGridViewContactList.Size = new System.Drawing.Size(677, 581);
             this.dataGridViewContactList.TabIndex = 4;
             // 
             // ColumnFirstName
@@ -272,7 +329,7 @@
             // 
             // buttonEditSelected
             // 
-            this.buttonEditSelected.Location = new System.Drawing.Point(112, 472);
+            this.buttonEditSelected.Location = new System.Drawing.Point(106, 599);
             this.buttonEditSelected.Name = "buttonEditSelected";
             this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
             this.buttonEditSelected.TabIndex = 3;
@@ -281,7 +338,7 @@
             // 
             // buttonDeleteSelected
             // 
-            this.buttonDeleteSelected.Location = new System.Drawing.Point(9, 472);
+            this.buttonDeleteSelected.Location = new System.Drawing.Point(3, 599);
             this.buttonDeleteSelected.Name = "buttonDeleteSelected";
             this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
             this.buttonDeleteSelected.TabIndex = 2;
@@ -290,7 +347,7 @@
             // 
             // buttonAddContact
             // 
-            this.buttonAddContact.Location = new System.Drawing.Point(200, 472);
+            this.buttonAddContact.Location = new System.Drawing.Point(194, 599);
             this.buttonAddContact.Name = "buttonAddContact";
             this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
             this.buttonAddContact.TabIndex = 1;
@@ -298,20 +355,22 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-            // aboutToolStripMenuItem
+            // pictureBoxPreview
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 353);
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.Size = new System.Drawing.Size(200, 240);
+            this.pictureBoxPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPreview.TabIndex = 0;
+            this.pictureBoxPreview.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(921, 572);
+            this.ClientSize = new System.Drawing.Size(980, 658);
             this.Controls.Add(this.mainWindow);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -327,8 +386,8 @@
             this.mainWindow.ResumeLayout(false);
             this.groupBoxSendTo.ResumeLayout(false);
             this.groupBoxSendTo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContactList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,6 +419,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxTemplate;
+        private System.Windows.Forms.TextBox textBoxCustomMessage;
+        private System.Windows.Forms.Label labelCustomMessage;
+        private System.Windows.Forms.Label labelTemplate;
+        private System.Windows.Forms.Label labelPreview;
 
     }
 }

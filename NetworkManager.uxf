@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>0</y>
+      <w>180</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>NetworkManager
+--
+# contacts: List&lt;Contact&gt;
+# smtp: SmtpClient
+# message: MailMessage
+# fromName: string
+# string fromAddress: string
+# toAddress: string
+# fromPassword: string
+# subject: string
+# body: string
+--
++ send: void
+# buildMessage: void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>300</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>HotmailManager
+--
+
+--
+# authenticate: void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>300</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>YahooManager
+--
+# fromAddressPrefix: string
+--
+# authenticate: void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>300</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>GmailManager
+--
+
+--
+# authenticate: void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>200</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>200</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;60.0;10.0;60.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>200</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;220.0;60.0;220.0;100.0</additional_attributes>
+  </element>
+</diagram>
