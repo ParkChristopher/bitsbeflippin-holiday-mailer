@@ -14,6 +14,7 @@ namespace HolidayMailer
 {
     abstract class NetworkManager
     {
+        protected User theSender;
         protected List<Contact> contacts;
         protected SmtpClient smtp;
         protected MailMessage message;
@@ -22,6 +23,7 @@ namespace HolidayMailer
         protected string fromPassword;
         protected string subject;
         protected string body;
+        protected int img;
 
         public NetworkManager()
         {
@@ -32,17 +34,42 @@ namespace HolidayMailer
             message = new MailMessage(fromAddress, toAddress);
             message.Subject = subject;
             message.Body = body;
+            message.IsBodyHtml = true;//new
         }
 
         public void send()
         {
+            string html = "";
+            Attachment bgImg;
+
+            if (img == 1)
+            {
+                html = HolidayMailer.Properties.Resources.index1;
+                HolidayMailer.Properties.Resources._1.Save("1.jpg");
+                bgImg = new Attachment("1.jpg");
+                bgImg.ContentId = "1";// this will need to be able to switch between 1 and 2
+            }
+
+            else
+            {
+                html = HolidayMailer.Properties.Resources.index2;
+                HolidayMailer.Properties.Resources._2.Save("2.jpg");
+                bgImg = new Attachment("2.jpg");
+                bgImg.ContentId = "2";// this will need to be able to switch between 1 and 2
+            }
+
             foreach (Contact current in contacts)
             {
                 toAddress = current.Email;
 
                 message = new MailMessage(fromAddress, toAddress);
                 message.Subject = subject;
-                message.Body = body;
+                //message.Body = body;
+                message.Body = HTMLManager.generateHTMLForSending(theSender, current, body, html, img);
+
+                //new
+                message.IsBodyHtml = true;
+                message.Attachments.Add(bgImg);
 
                 try
                 {
@@ -50,8 +77,10 @@ namespace HolidayMailer
                 }
                 catch (Exception E)
                 {
-                    Console.WriteLine(E.ToString());
-                    Console.ReadLine();
+                    System.Windows.Forms.MessageBox.Show(E.ToString());
+                    //no console available
+                    //Console.WriteLine(E.ToString());
+                    //Console.ReadLine();
                 }
             }
         }
@@ -59,7 +88,7 @@ namespace HolidayMailer
 
     class GmailManager : NetworkManager
     {
-        public GmailManager(User theSender, List<Contact> contacts, string subject, string body)
+        public GmailManager(User theSender, List<Contact> contacts, string subject, string body, int img)
         {
             this.body = body;
             this.fromName = theSender.FirstName + " " + theSender.LastName;
@@ -68,6 +97,8 @@ namespace HolidayMailer
             this.contacts = contacts;
             this.subject = subject;
             this.body = body;
+            this.theSender = theSender;
+            this.img = img;
 
             smtp = new SmtpClient();
 
@@ -87,7 +118,7 @@ namespace HolidayMailer
 
     class HotmailManager : NetworkManager
     {
-        public HotmailManager(User theSender, List<Contact> contacts, string subject, string body)
+        public HotmailManager(User theSender, List<Contact> contacts, string subject, string body, int img)
         {
             this.body = body;
             this.fromName = theSender.FirstName + " " + theSender.LastName;
@@ -96,6 +127,8 @@ namespace HolidayMailer
             this.contacts = contacts;
             this.subject = subject;
             this.body = body;
+            this.theSender = theSender;
+            this.img = img;
 
             smtp = new SmtpClient();
 
@@ -121,7 +154,7 @@ namespace HolidayMailer
     class YahooManager : NetworkManager
     {
         protected string fromAddressPrefix;
-        public YahooManager(User theSender, List<Contact> contacts, string subject, string body)
+        public YahooManager(User theSender, List<Contact> contacts, string subject, string body, int img)
         { 
             this.fromName = theSender.FirstName + " " + theSender.LastName;
             this.fromAddress = theSender.Email;
@@ -129,6 +162,8 @@ namespace HolidayMailer
             this.contacts = contacts;
             this.subject = subject;
             this.body = body;
+            this.theSender = theSender;
+            this.img = img;
 
             string[] toSplit = fromAddress.Split('@');
             fromAddressPrefix = toSplit[0];

@@ -92,6 +92,22 @@ namespace HolidayMailer
 
         private void sendEmails()
         {
+            string preview = "";
+            int img = 1;
+
+            if (comboBoxTemplate.Text == "RedTemplate.jpg")
+            {
+                img = 1;
+                //preview = HolidayMailer.Properties.Resources.index1;
+            }
+
+            if (comboBoxTemplate.Text == "RedAndBlackTemplate.jpg")
+            {
+                img = 2;
+               // preview = HolidayMailer.Properties.Resources.index2;
+            }
+
+
             if ( currentUser == null)
             {
                 MessageBox.Show("Enter email authentication first!");
@@ -99,15 +115,16 @@ namespace HolidayMailer
             }
 
             if (currentUser.EmailService == "Gmail")
-                mailer = new GmailManager(currentUser, contactList, "Some Subject", "Some body");
+                //mailer = new GmailManager(currentUser, contactList, "Some Subject", "Some body");
+                mailer = new GmailManager(currentUser, contactList, "Happy Holidays!", textBoxCustomMessage.Text, img);
 
             if (currentUser.EmailService == "Hotmail")
-                mailer = new HotmailManager(currentUser, contactList, "Some Subject", "Some body");
+                mailer = new HotmailManager(currentUser, contactList, "Happy Holidays!", "Some body", img);
 
             if (currentUser.EmailService == "Yahoo")
-                mailer = new YahooManager(currentUser, contactList, "Some Subject", "Some body");
+                mailer = new YahooManager(currentUser, contactList, "Happy Holidays!", "Some body", img);
 
-            MessageBox.Show("Test");
+            //MessageBox.Show("Test");
 
             try
             {
@@ -196,7 +213,7 @@ namespace HolidayMailer
             User testu = new User("Leonard", "Nimoy", "mindfusion@yahoo.com");
             Contact testc = new Contact("Shatner", "William", "assimilatethis@email.com", false);
 
-            preview = HTMLManager.generateHTMLForPreviewing(testu, testc, textBoxCustomMessage.Text, preview);
+            preview = HTMLManager.generateHTMLForPreviewing(testu, testc, textBoxCustomMessage.Text, preview, img);
 
             StreamWriter fout = new StreamWriter("HTMLPreview.html");
 
