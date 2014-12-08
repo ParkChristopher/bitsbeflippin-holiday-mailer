@@ -49,6 +49,8 @@ namespace HolidayMailer
             this.sender.EmailService = comboBoxProviders.Text;
 
             MessageBox.Show("User has been initialized.");
+            this.Close();
+                
 
 
 

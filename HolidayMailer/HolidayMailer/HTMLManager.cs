@@ -24,10 +24,12 @@ namespace HolidayMailer
         //work on this one first
         public static string generateHTMLForPreviewing(User sender, Contact receiver, string message, string html)
         {
+            string[] tokens;
             string ret = html;
             string from, to;
-            int i, lineBreaks = message.Length / 50;
+            //int i, lineBreaks = message.Length / 50;
             string temp = message;
+            int tokenNum, tokenBreaks;
 
             from = sender.FirstName + " " + sender.LastName;
             to = receiver.FirstName + " " + receiver.LastName;
@@ -35,15 +37,18 @@ namespace HolidayMailer
             ret = ret.Replace("#from#", from);
             ret = ret.Replace("#name#", to);
 
+            tokens = message.Split(' ');
+            tokenNum = tokens.Length;
+            tokenBreaks = tokenNum / 10;
 
-            //this will need to be modified for tokens and not line indexes
-            for (i = 0; i < lineBreaks; i++)
-                temp = temp.Insert((i + 1) * 50 + 4 * i, "<br>");
+            //System.Windows.Forms.MessageBox.Show(tokenBreaks.ToString());
+
+            for (int i = 0; i < tokenNum; i++)
+                temp += tokens[i] + " ";
 
             ret = ret.Replace("#body#", temp);
 
             return ret;
         }
-
     }
 }

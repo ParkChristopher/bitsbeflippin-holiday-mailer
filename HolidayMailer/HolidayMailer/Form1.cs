@@ -107,8 +107,19 @@ namespace HolidayMailer
             if (currentUser.EmailService == "Yahoo")
                 mailer = new YahooManager(currentUser, contactList, "Some Subject", "Some body");
 
-            if (mailer != null)
-                mailer.send();
+            MessageBox.Show("Test");
+
+            try
+            {
+                if (mailer != null)
+                    mailer.send();
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Mail was not sent. Improper sender configuration.");
+                //this apparently doesn't work. no exception is thrown with improper sender configs
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

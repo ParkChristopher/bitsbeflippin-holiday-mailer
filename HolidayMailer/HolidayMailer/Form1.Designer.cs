@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.menuBar = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterUserCtrlAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedContactsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolstripMainSender = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBarEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,12 +70,6 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enterUserCtrlAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSelectedContactsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -92,6 +92,50 @@
             this.menuBar.Size = new System.Drawing.Size(980, 24);
             this.menuBar.TabIndex = 0;
             this.menuBar.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enterUserCtrlAToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // enterUserCtrlAToolStripMenuItem
+            // 
+            this.enterUserCtrlAToolStripMenuItem.Name = "enterUserCtrlAToolStripMenuItem";
+            this.enterUserCtrlAToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.enterUserCtrlAToolStripMenuItem.Text = "Enter User Ctrl+A";
+            this.enterUserCtrlAToolStripMenuItem.Click += new System.EventHandler(this.enterUserCtrlAToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editSelectedContactsToolStripMenuItem1});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // editSelectedContactsToolStripMenuItem1
+            // 
+            this.editSelectedContactsToolStripMenuItem1.Name = "editSelectedContactsToolStripMenuItem1";
+            this.editSelectedContactsToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.editSelectedContactsToolStripMenuItem1.Text = "Edit Selected Contacts";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutF1ToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutF1ToolStripMenuItem
+            // 
+            this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
+            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutF1ToolStripMenuItem.Text = "About F1";
+            this.aboutF1ToolStripMenuItem.Click += new System.EventHandler(this.aboutF1ToolStripMenuItem_Click);
             // 
             // menuBarFile
             // 
@@ -222,6 +266,7 @@
             // textBoxCustomMessage
             // 
             this.textBoxCustomMessage.Location = new System.Drawing.Point(16, 240);
+            this.textBoxCustomMessage.MaxLength = 240;
             this.textBoxCustomMessage.Multiline = true;
             this.textBoxCustomMessage.Name = "textBoxCustomMessage";
             this.textBoxCustomMessage.Size = new System.Drawing.Size(197, 82);
@@ -449,50 +494,6 @@
             this.buttonAddContact.Text = "&Add Contact";
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterUserCtrlAToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editSelectedContactsToolStripMenuItem1});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutF1ToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // enterUserCtrlAToolStripMenuItem
-            // 
-            this.enterUserCtrlAToolStripMenuItem.Name = "enterUserCtrlAToolStripMenuItem";
-            this.enterUserCtrlAToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.enterUserCtrlAToolStripMenuItem.Text = "Enter User Ctrl+A";
-            this.enterUserCtrlAToolStripMenuItem.Click += new System.EventHandler(this.enterUserCtrlAToolStripMenuItem_Click);
-            // 
-            // editSelectedContactsToolStripMenuItem1
-            // 
-            this.editSelectedContactsToolStripMenuItem1.Name = "editSelectedContactsToolStripMenuItem1";
-            this.editSelectedContactsToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.editSelectedContactsToolStripMenuItem1.Text = "Edit Selected Contacts";
-            // 
-            // aboutF1ToolStripMenuItem
-            // 
-            this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
-            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutF1ToolStripMenuItem.Text = "About F1";
-            this.aboutF1ToolStripMenuItem.Click += new System.EventHandler(this.aboutF1ToolStripMenuItem_Click);
             // 
             // Form1
             // 
