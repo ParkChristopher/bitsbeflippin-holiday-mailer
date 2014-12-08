@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HolidayMailer
 {
@@ -86,6 +87,12 @@ namespace HolidayMailer
 
         private void sendEmails()
         {
+            if ( currentUser == null)
+            {
+                MessageBox.Show("Enter email authentication first!");
+                return;
+            }
+
             if (currentUser.EmailService == "Gmail")
                 mailer = new GmailManager(currentUser, contactList, "Some Subject", "Some body");
 
@@ -114,6 +121,7 @@ namespace HolidayMailer
         {
             String selected = comboBoxTemplate.Text;
 
+            //due to how we handle resources, this may need to be updated
             pictureBoxPreview.Image = Image.FromFile(selected);
         }
 
@@ -144,6 +152,49 @@ namespace HolidayMailer
                 loadContacts();
             }
 
+        }
+
+        private void buttonPreview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPreview_Click_1(object sender, EventArgs e)
+        {
+            string preview = "";
+            int img = 1;
+
+            if (comboBoxTemplate.Text == "RedTemplate.jpg")
+            {
+                img = 1;
+                preview = HolidayMailer.Properties.Resources.index1;
+            }
+
+            if (comboBoxTemplate.Text == "RedAndBlackTemplate.jpg")
+            {
+                img = 2;
+                preview = HolidayMailer.Properties.Resources.index2;
+            }
+
+            //these can be changed to an actual user or to some dummy stufff
+            User testu = new User("Pilgrim", "Nate", "natetech86@gmail.com");
+            Contact testc = new Contact("Shatner", "William", "assimilatethis@email.com", false);
+
+            preview = HTMLManager.generateHTMLForPreviewing(testu, testc, textBoxCustomMessage.Text, preview);
+
+            StreamWriter fout = new StreamWriter("HTMLPreview.html");
+
+            fout.Write(preview);
+
+            if (img == 1)
+                HolidayMailer.Properties.Resources._1.Save(img + ".jpg");
+
+            if (img == 2)
+                HolidayMailer.Properties.Resources._2.Save(img + ".jpg");
+
+            System.Diagnostics.Process.Start("HTMLPreview.html");
+
+            fout.Close();
         }
     }
 }

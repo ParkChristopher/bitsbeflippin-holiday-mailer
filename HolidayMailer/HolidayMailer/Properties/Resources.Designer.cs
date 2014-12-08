@@ -63,6 +63,118 @@ namespace HolidayMailer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2 {
+            get {
+                object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///&lt;meta content=&quot;text/html; charset=windows-1252&quot; http-equiv=&quot;Content-Type&quot;&gt;
+        ///&lt;style&gt;
+        ///a {
+        ///	color:#D3B1B2;
+        ///	text-decoration:none;
+        ///}
+        ///&lt;/style&gt;
+        ///
+        ///&lt;meta content=&quot;MSHTML 8.00.6001.18852&quot; name=&quot;GENERATOR&quot;&gt;&lt;/head&gt;&lt;body bgcolor=&quot;#8d0100&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; topmargin=&quot;0&quot;&gt;
+        ///&lt;table bgcolor=&quot;#8d0100&quot; border=&quot;0&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+        ///&lt;tbody&gt;
+        ///&lt;tr&gt;
+        ///&lt;td align=&quot;middle&quot; bgcolor=&quot;#8d0100&quot; style=&quot;TEXT-ALIGN: center&quot;&gt;
+        ///&lt;p align=&quot;center&quot; style=&quot;FONT-FAMILY [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string index1 {
+            get {
+                return ResourceManager.GetString("index1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///&lt;meta content=&quot;text/html; charset=windows-1252&quot; http-equiv=&quot;Content-Type&quot;&gt;
+        ///&lt;style&gt;
+        ///a {
+        ///	color:#D3B1B2;
+        ///	text-decoration:none;
+        ///}
+        ///&lt;/style&gt;
+        ///
+        ///&lt;meta content=&quot;MSHTML 8.00.6001.18852&quot; name=&quot;GENERATOR&quot;&gt;&lt;/head&gt;&lt;body bgcolor=&quot;#8d0100&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; topmargin=&quot;0&quot;&gt;
+        ///&lt;table bgcolor=&quot;#8d0100&quot; border=&quot;0&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+        ///&lt;tbody&gt;
+        ///&lt;tr&gt;
+        ///&lt;td align=&quot;middle&quot; bgcolor=&quot;#8d0100&quot; style=&quot;TEXT-ALIGN: center&quot;&gt;
+        ///&lt;p align=&quot;center&quot; style=&quot;FONT-FAMILY [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string index11 {
+            get {
+                return ResourceManager.GetString("index11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///&lt;meta content=&quot;text/html; charset=windows-1252&quot; http-equiv=&quot;Content-Type&quot;&gt;
+        ///&lt;style&gt;
+        ///a {
+        ///	color:#FFFFFF;
+        ///	text-decoration:none;
+        ///}
+        ///&lt;/style&gt;
+        ///
+        ///&lt;meta content=&quot;MSHTML 8.00.6001.18852&quot; name=&quot;GENERATOR&quot;&gt;&lt;/head&gt;&lt;body bgcolor=&quot;#04090d&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; topmargin=&quot;0&quot;&gt;
+        ///&lt;table bgcolor=&quot;#04090d&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+        ///&lt;tbody&gt;
+        ///&lt;tr&gt;
+        ///&lt;td align=&quot;middle&quot; bgcolor=&quot;#04090d&quot; style=&quot;TEXT-ALIGN: center&quot;&gt;
+        ///&lt;table align=&quot;center&quot; bgcolor=&quot;#04090 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string index2 {
+            get {
+                return ResourceManager.GetString("index2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///&lt;meta content=&quot;text/html; charset=windows-1252&quot; http-equiv=&quot;Content-Type&quot;&gt;
+        ///&lt;style&gt;
+        ///a {
+        ///	color:#FFFFFF;
+        ///	text-decoration:none;
+        ///}
+        ///&lt;/style&gt;
+        ///
+        ///&lt;meta content=&quot;MSHTML 8.00.6001.18852&quot; name=&quot;GENERATOR&quot;&gt;&lt;/head&gt;&lt;body bgcolor=&quot;#04090d&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; topmargin=&quot;0&quot;&gt;
+        ///&lt;table bgcolor=&quot;#04090d&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+        ///&lt;tbody&gt;
+        ///&lt;tr&gt;
+        ///&lt;td align=&quot;middle&quot; bgcolor=&quot;#04090d&quot; style=&quot;TEXT-ALIGN: center&quot;&gt;
+        ///&lt;table align=&quot;center&quot; bgcolor=&quot;#04090 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string index21 {
+            get {
+                return ResourceManager.GetString("index21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RedAndBlackTemplate {
             get {
                 object obj = ResourceManager.GetObject("RedAndBlackTemplate", resourceCulture);

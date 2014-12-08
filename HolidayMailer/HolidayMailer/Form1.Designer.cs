@@ -36,6 +36,7 @@
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
+            this.buttonPreview = new System.Windows.Forms.Button();
             this.labelPreview = new System.Windows.Forms.Label();
             this.labelCustomMessage = new System.Windows.Forms.Label();
             this.labelTemplate = new System.Windows.Forms.Label();
@@ -50,6 +51,11 @@
             this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelEmailout = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelUsernameout = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.dataGridViewContactList = new System.Windows.Forms.DataGridView();
             this.ColumnFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,6 +145,7 @@
             // mainWindow.Panel1
             // 
             this.mainWindow.Panel1.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
+            this.mainWindow.Panel1.Controls.Add(this.buttonPreview);
             this.mainWindow.Panel1.Controls.Add(this.labelPreview);
             this.mainWindow.Panel1.Controls.Add(this.labelCustomMessage);
             this.mainWindow.Panel1.Controls.Add(this.labelTemplate);
@@ -155,14 +162,29 @@
             // mainWindow.Panel2
             // 
             this.mainWindow.Panel2.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
+            this.mainWindow.Panel2.Controls.Add(this.label2);
+            this.mainWindow.Panel2.Controls.Add(this.labelEmailout);
+            this.mainWindow.Panel2.Controls.Add(this.labelEmail);
+            this.mainWindow.Panel2.Controls.Add(this.labelUsernameout);
+            this.mainWindow.Panel2.Controls.Add(this.labelUsername);
             this.mainWindow.Panel2.Controls.Add(this.dataGridViewContactList);
             this.mainWindow.Panel2.Controls.Add(this.buttonEditSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonDeleteSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.mainWindow.Size = new System.Drawing.Size(980, 634);
-            this.mainWindow.SplitterDistance = 230;
+            this.mainWindow.SplitterDistance = 229;
             this.mainWindow.TabIndex = 1;
+            // 
+            // buttonPreview
+            // 
+            this.buttonPreview.Location = new System.Drawing.Point(103, 130);
+            this.buttonPreview.Name = "buttonPreview";
+            this.buttonPreview.Size = new System.Drawing.Size(81, 23);
+            this.buttonPreview.TabIndex = 11;
+            this.buttonPreview.Text = "Preview";
+            this.buttonPreview.UseVisualStyleBackColor = true;
+            this.buttonPreview.Click += new System.EventHandler(this.buttonPreview_Click_1);
             // 
             // labelPreview
             // 
@@ -304,6 +326,49 @@
             this.pictureBoxPreview.TabIndex = 0;
             this.pictureBoxPreview.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(514, 596);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Email:";
+            // 
+            // labelEmailout
+            // 
+            this.labelEmailout.AutoSize = true;
+            this.labelEmailout.Location = new System.Drawing.Point(373, 311);
+            this.labelEmailout.Name = "labelEmailout";
+            this.labelEmailout.Size = new System.Drawing.Size(0, 13);
+            this.labelEmailout.TabIndex = 8;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(473, 596);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(35, 13);
+            this.labelEmail.TabIndex = 7;
+            this.labelEmail.Text = "Email:";
+            // 
+            // labelUsernameout
+            // 
+            this.labelUsernameout.AutoSize = true;
+            this.labelUsernameout.Location = new System.Drawing.Point(320, 599);
+            this.labelUsernameout.Name = "labelUsernameout";
+            this.labelUsernameout.Size = new System.Drawing.Size(0, 13);
+            this.labelUsernameout.TabIndex = 6;
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Location = new System.Drawing.Point(276, 599);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(38, 13);
+            this.labelUsername.TabIndex = 5;
+            this.labelUsername.Text = "Name:";
+            // 
             // dataGridViewContactList
             // 
             this.dataGridViewContactList.AllowUserToAddRows = false;
@@ -397,6 +462,7 @@
             this.mainWindow.Panel1.ResumeLayout(false);
             this.mainWindow.Panel1.PerformLayout();
             this.mainWindow.Panel2.ResumeLayout(false);
+            this.mainWindow.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).EndInit();
             this.mainWindow.ResumeLayout(false);
             this.groupBoxSendTo.ResumeLayout(false);
@@ -440,6 +506,12 @@
         private System.Windows.Forms.Label labelTemplate;
         private System.Windows.Forms.Label labelPreview;
         private System.Windows.Forms.ToolStripMenuItem editSelectedContactsToolStripMenuItem;
+        private System.Windows.Forms.Button buttonPreview;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelUsernameout;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelEmailout;
 
     }
 }
