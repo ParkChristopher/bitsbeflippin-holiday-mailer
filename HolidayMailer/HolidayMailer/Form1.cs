@@ -77,7 +77,12 @@ namespace HolidayMailer
                 MessageBox.Show("User was not initialized correctly.");
 
             else
+            {
                 currentUser = newUser;
+                labelUsernameout.Text = currentUser.FirstName + " " + currentUser.LastName;
+                labelEmailout2.Text = currentUser.Email;
+                //labeuser
+            }
         }
 
         private void buttonSend_Click(object sender, EventArgs e)
@@ -177,7 +182,7 @@ namespace HolidayMailer
             }
 
             //these can be changed to an actual user or to some dummy stufff
-            User testu = new User("Pilgrim", "Nate", "natetech86@gmail.com");
+            User testu = new User("Leonard", "Nimoy", "mindfusion@yahoo.com");
             Contact testc = new Contact("Shatner", "William", "assimilatethis@email.com", false);
 
             preview = HTMLManager.generateHTMLForPreviewing(testu, testc, textBoxCustomMessage.Text, preview);
@@ -195,6 +200,22 @@ namespace HolidayMailer
             System.Diagnostics.Process.Start("HTMLPreview.html");
 
             fout.Close();
+        }
+
+        private void enterUserCtrlAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            initUser();
+        }
+
+        private void aboutF1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Holiday Mailer\n\n" +
+            "Team: Bits Be Flippin\'\n\n" +
+            "Members:\n" +
+            "Sami Awwad\n" +
+            "Chris Park\n" +
+            "Nathan Pilgrim\n\n" +
+            "Version: 1", "About the Developers", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }

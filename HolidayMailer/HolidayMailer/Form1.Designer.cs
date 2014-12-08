@@ -51,7 +51,7 @@
             this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelEmailout2 = new System.Windows.Forms.Label();
             this.labelEmailout = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelUsernameout = new System.Windows.Forms.Label();
@@ -64,6 +64,12 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterUserCtrlAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedContactsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -78,9 +84,9 @@
             // 
             this.menuBar.BackColor = System.Drawing.SystemColors.Control;
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuBarFile,
-            this.menuBarEdit,
-            this.menuBarHelp});
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(980, 24);
@@ -162,7 +168,7 @@
             // mainWindow.Panel2
             // 
             this.mainWindow.Panel2.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
-            this.mainWindow.Panel2.Controls.Add(this.label2);
+            this.mainWindow.Panel2.Controls.Add(this.labelEmailout2);
             this.mainWindow.Panel2.Controls.Add(this.labelEmailout);
             this.mainWindow.Panel2.Controls.Add(this.labelEmail);
             this.mainWindow.Panel2.Controls.Add(this.labelUsernameout);
@@ -326,14 +332,13 @@
             this.pictureBoxPreview.TabIndex = 0;
             this.pictureBoxPreview.TabStop = false;
             // 
-            // label2
+            // labelEmailout2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(514, 596);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Email:";
+            this.labelEmailout2.AutoSize = true;
+            this.labelEmailout2.Location = new System.Drawing.Point(514, 596);
+            this.labelEmailout2.Name = "labelEmailout2";
+            this.labelEmailout2.Size = new System.Drawing.Size(0, 13);
+            this.labelEmailout2.TabIndex = 9;
             // 
             // labelEmailout
             // 
@@ -445,6 +450,50 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enterUserCtrlAToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editSelectedContactsToolStripMenuItem1});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutF1ToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // enterUserCtrlAToolStripMenuItem
+            // 
+            this.enterUserCtrlAToolStripMenuItem.Name = "enterUserCtrlAToolStripMenuItem";
+            this.enterUserCtrlAToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.enterUserCtrlAToolStripMenuItem.Text = "Enter User Ctrl+A";
+            this.enterUserCtrlAToolStripMenuItem.Click += new System.EventHandler(this.enterUserCtrlAToolStripMenuItem_Click);
+            // 
+            // editSelectedContactsToolStripMenuItem1
+            // 
+            this.editSelectedContactsToolStripMenuItem1.Name = "editSelectedContactsToolStripMenuItem1";
+            this.editSelectedContactsToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.editSelectedContactsToolStripMenuItem1.Text = "Edit Selected Contacts";
+            // 
+            // aboutF1ToolStripMenuItem
+            // 
+            this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
+            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutF1ToolStripMenuItem.Text = "About F1";
+            this.aboutF1ToolStripMenuItem.Click += new System.EventHandler(this.aboutF1ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,8 +559,14 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelUsernameout;
         private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelEmailout2;
         private System.Windows.Forms.Label labelEmailout;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enterUserCtrlAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editSelectedContactsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutF1ToolStripMenuItem;
 
     }
 }

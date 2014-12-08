@@ -35,6 +35,8 @@ namespace HolidayMailer
             ret = ret.Replace("#from#", from);
             ret = ret.Replace("#name#", to);
 
+
+            //this will need to be modified for tokens and not line indexes
             for (i = 0; i < lineBreaks; i++)
                 temp = temp.Insert((i + 1) * 50 + 4 * i, "<br>");
 
