@@ -102,6 +102,7 @@ namespace HolidayMailer
                 catch (Exception E)
                 {
                     System.Windows.Forms.MessageBox.Show("Please check your user authentication settings and try again!");
+                    string err = E.ToString();
                     return;
                 }
             }
