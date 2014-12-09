@@ -18,6 +18,7 @@ namespace HolidayMailer
         private String connectionString = "Data Source=HolidayMailer.db;Version=3;Compress=true";
         private SQLiteConnection connection;
         private SQLiteCommand command;
+        private Object[] contactData;
 
         public DatabaseManager()
         {
@@ -43,45 +44,6 @@ namespace HolidayMailer
             command.ExecuteNonQuery();
             connection.Close();
         }
-        
-        public List<Contact> retrieveByLastName(string text)
-        {
-            DataTable dt = new DataTable();
-            List<Contact> contactList = new List<Contact>();
-            Object[] contactData;
-
-            int i;
-
-            setConnection();
-            connection.Open();
-            command = new SQLiteCommand("SELECT * FROM default_user WHERE LastName LIKE"
-                +" @textInput;", connection);
-            command.Parameters.AddWithValue("@textInput", text + "%");
-
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
-            da.SelectCommand = command;
-            da.Fill(dt);
-
-
-            foreach (DataRow row in dt.Rows)
-            {
-                contactData = new Object[4];
-                i = 0;
-                foreach (DataColumn column in dt.Columns)
-                {
-                    contactData[i] = row[column];
-                    i++;
-                }
-
-                contactList.Add(new Contact((string)contactData[0],
-                    (string)contactData[1],
-                    (string)contactData[2],
-                    (bool)contactData[3]));
-            }
-            connection.Close();
-
-            return contactList;
-        }
 
         public void delete(string email)
         {
@@ -96,19 +58,38 @@ namespace HolidayMailer
 
             executeQuery(sql);
         }
+        
+        public List<Contact> retrieveByLastName(string text)
+        {
+            DataTable dt = new DataTable();
+            List<Contact> contactList = new List<Contact>();
+          
+            setConnection();
+            connection.Open();
 
-        //MISSING FEATURE: Retrieve contacts by last inital
+            command = new SQLiteCommand("SELECT * FROM default_user WHERE LastName LIKE"
+                +" @textInput;", connection);
+            command.Parameters.AddWithValue("@textInput", text + "%");
+
+            SQLiteDataAdapter da = new SQLiteDataAdapter();
+            da.SelectCommand = command;
+            da.Fill(dt);
+
+            contactList = populateContactList(dt);
+            
+            connection.Close();
+
+            return contactList;
+        }
 
         public List<Contact> retrieveContacts()
         {
             DataTable dt = new DataTable();
             List<Contact> contactList = new List<Contact>();
-            Object[] contactData;
-
-            int i;
 
             setConnection();
             connection.Open();
+
             command = new SQLiteCommand("SELECT * FROM default_user;",
                 connection);
             SQLiteDataAdapter da = new SQLiteDataAdapter();
@@ -116,7 +97,18 @@ namespace HolidayMailer
             da.SelectCommand = command;
             da.Fill(dt);
 
-            
+            contactList = populateContactList(dt);
+        
+            connection.Close();
+
+            return contactList;
+        }
+
+        private List<Contact> populateContactList(DataTable dt)
+        {
+            int i;
+            List<Contact> tempList = new List<Contact>();
+
             foreach (DataRow row in dt.Rows)
             {
                 contactData = new Object[4];
@@ -127,14 +119,13 @@ namespace HolidayMailer
                     i++;
                 }
 
-                contactList.Add(new Contact((string)contactData[0],
+                tempList.Add(new Contact((string)contactData[0],
                     (string)contactData[1],
                     (string)contactData[2],
                     (bool)contactData[3]));
             }
-            connection.Close();
 
-            return contactList;
+            return tempList;
         }
 
         private bool createDatabase()
