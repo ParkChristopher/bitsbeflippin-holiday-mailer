@@ -100,6 +100,12 @@ namespace HolidayMailer
 
         private void sendEmails()
         {
+            if (contactList == null || contactList.Count == 0)
+            {
+                MessageBox.Show("No contacts selected or available to send to.");
+                return;
+            }
+
             int img = 1;
 
             if (comboBoxTemplate.Text == "RedTemplate.jpg")
@@ -132,7 +138,7 @@ namespace HolidayMailer
 
             catch (Exception e)
             {
-                //MessageBox.Show(e.ToString());
+                string err = e.ToString();
             }
         }
 
@@ -196,7 +202,7 @@ namespace HolidayMailer
         {
             string preview = "";
             int img = 1;
-            User testu;// = currentUser;
+            User testu;
             Contact testc;
             StreamWriter fout;
 
