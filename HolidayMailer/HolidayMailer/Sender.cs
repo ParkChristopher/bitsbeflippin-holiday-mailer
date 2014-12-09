@@ -26,6 +26,12 @@ namespace HolidayMailer
             InitializeComponent();
 
             this.sender = sender;
+
+            textBoxLastName.Text = sender.LastName;
+            textBoxFirstName.Text = sender.FirstName;
+            textBoxEmail.Text = sender.Email;
+            textBoxPassword.Text = sender.Password;
+            comboBoxProviders.Text = sender.EmailService;
         }
 
         private void label1_Click(object sender, EventArgs e)

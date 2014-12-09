@@ -38,17 +38,23 @@ namespace HolidayMailer
             message.IsBodyHtml = true;
         }
 
-        public void send(string attach)
+        public void send(string[] attach)
         {
+            int i;
             string html = "";
             Attachment bgImg;
-            Attachment requiredAttachment;//
+            Attachment[] requiredAttachment;
 
             if (attach == null)
                 requiredAttachment = null;
 
             else
-                requiredAttachment = new Attachment(attach);
+            {
+                requiredAttachment = new Attachment[attach.Length];
+                
+                for (i = 0; i < attach.Length;i++ )
+                    requiredAttachment[i] = new Attachment(attach[i]);
+            }
 
 
             if (img == 1)
@@ -84,7 +90,10 @@ namespace HolidayMailer
                 message.Attachments.Add(bgImg);
 
                 if (requiredAttachment != null)
-                    message.Attachments.Add(bgImg);
+                {
+                    for (i = 0; i < attach.Length;i++ )
+                        message.Attachments.Add(requiredAttachment[i]);
+                }
 
                 try
                 {
@@ -92,13 +101,12 @@ namespace HolidayMailer
                 }
                 catch (Exception E)
                 {
-                    //System.Windows.Forms.MessageBox.Show(E.ToString());
                     System.Windows.Forms.MessageBox.Show("Please check your user authentication settings and try again!");
                     return;
                 }
             }
 
-            System.Windows.Forms.MessageBox.Show(contacts.Count + " emails have been sent!");
+            System.Windows.Forms.MessageBox.Show(contacts.Count + " email(s) have been sent!");
         }
     }
 

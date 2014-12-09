@@ -24,6 +24,11 @@ namespace HolidayMailer
             loadContacts();
 
             comboBoxTemplate.SelectedIndex = 0;
+            buttonRemove.Enabled = false;
+
+            //sets up a dummy user
+            currentUser = new User("Burgundy", "Ron", "imnotevenmad@gmail.com", "***");
+            currentUser.EmailService = "Gmail";
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -95,9 +100,6 @@ namespace HolidayMailer
 
         private void sendEmails()
         {
-
-
-
             int img = 1;
 
             if (comboBoxTemplate.Text == "RedTemplate.jpg")
@@ -125,7 +127,7 @@ namespace HolidayMailer
             try
             {
                 if (mailer != null)
-                    mailer.send(null); // need to create a file
+                    mailer.send(files); // need to create a file
             }
 
             catch (Exception e)
@@ -211,7 +213,7 @@ namespace HolidayMailer
             }
 
             if (currentUser == null)
-                testu = new User("Leonard", "Nimoy", "mindfusion@yahoo.com", "garbage");
+                testu = new User("Nimoy", "Leonard", "mindfusion@yahoo.com", "garbage");
 
             else
                 testu = currentUser;
@@ -249,6 +251,26 @@ namespace HolidayMailer
             "Chris Park\n" +
             "Nathan Pilgrim\n\n" +
             "Version: 1", "About the Developers", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void buttonAttach_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            DialogResult result = ofd.ShowDialog();
+
+            if (result == DialogResult.OK)
+                files = ofd.FileNames;
+
+            if (files != null)
+                buttonRemove.Enabled = true;
+            
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            buttonAttach.Enabled = true;
+            buttonRemove.Enabled = false;
+            files = null;
         }
     }
 }

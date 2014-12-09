@@ -44,6 +44,9 @@
             this.menuBarHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindow = new System.Windows.Forms.SplitContainer();
+            this.labelAttachFile = new System.Windows.Forms.Label();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.buttonAttach = new System.Windows.Forms.Button();
             this.textBoxSubject = new System.Windows.Forms.TextBox();
             this.labelSubject = new System.Windows.Forms.Label();
             this.buttonPreview = new System.Windows.Forms.Button();
@@ -70,9 +73,6 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.buttonAttach = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.labelAttachFile = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -243,6 +243,35 @@
             this.mainWindow.Size = new System.Drawing.Size(980, 634);
             this.mainWindow.SplitterDistance = 225;
             this.mainWindow.TabIndex = 1;
+            // 
+            // labelAttachFile
+            // 
+            this.labelAttachFile.AutoSize = true;
+            this.labelAttachFile.Location = new System.Drawing.Point(16, 333);
+            this.labelAttachFile.Name = "labelAttachFile";
+            this.labelAttachFile.Size = new System.Drawing.Size(57, 13);
+            this.labelAttachFile.TabIndex = 16;
+            this.labelAttachFile.Text = "Attach File";
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(77, 351);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(56, 23);
+            this.buttonRemove.TabIndex = 15;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
+            // buttonAttach
+            // 
+            this.buttonAttach.Location = new System.Drawing.Point(16, 351);
+            this.buttonAttach.Name = "buttonAttach";
+            this.buttonAttach.Size = new System.Drawing.Size(55, 23);
+            this.buttonAttach.TabIndex = 14;
+            this.buttonAttach.Text = "Attach";
+            this.buttonAttach.UseVisualStyleBackColor = true;
+            this.buttonAttach.Click += new System.EventHandler(this.buttonAttach_Click);
             // 
             // textBoxSubject
             // 
@@ -496,33 +525,6 @@
             this.buttonAddContact.Text = "&Add Contact";
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
-            // 
-            // buttonAttach
-            // 
-            this.buttonAttach.Location = new System.Drawing.Point(16, 351);
-            this.buttonAttach.Name = "buttonAttach";
-            this.buttonAttach.Size = new System.Drawing.Size(55, 23);
-            this.buttonAttach.TabIndex = 14;
-            this.buttonAttach.Text = "Attach";
-            this.buttonAttach.UseVisualStyleBackColor = true;
-            // 
-            // buttonRemove
-            // 
-            this.buttonRemove.Location = new System.Drawing.Point(77, 351);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(56, 23);
-            this.buttonRemove.TabIndex = 15;
-            this.buttonRemove.Text = "Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            // 
-            // labelAttachFile
-            // 
-            this.labelAttachFile.AutoSize = true;
-            this.labelAttachFile.Location = new System.Drawing.Point(16, 333);
-            this.labelAttachFile.Name = "labelAttachFile";
-            this.labelAttachFile.Size = new System.Drawing.Size(57, 13);
-            this.labelAttachFile.TabIndex = 16;
-            this.labelAttachFile.Text = "Attach File";
             // 
             // Form1
             // 
