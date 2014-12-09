@@ -62,7 +62,7 @@ namespace HolidayMailer
                 html = HolidayMailer.Properties.Resources.index1;
 
                 if ( !File.Exists("1.jpg"))
-                    HolidayMailer.Properties.Resources._1.Save("1.jpg");
+                    HolidayMailer.Properties.Resources.img1.Save("1.jpg");
 
                 bgImg = new Attachment("1.jpg");
                 bgImg.ContentId = "1";
@@ -73,7 +73,7 @@ namespace HolidayMailer
                 html = HolidayMailer.Properties.Resources.index2;
 
                 if (!File.Exists("2.jpg"))
-                    HolidayMailer.Properties.Resources._2.Save("2.jpg");
+                    HolidayMailer.Properties.Resources.img2.Save("2.jpg");
 
                 bgImg = new Attachment("2.jpg");
                 bgImg.ContentId = "2";

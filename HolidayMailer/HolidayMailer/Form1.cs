@@ -250,10 +250,10 @@ namespace HolidayMailer
             fout.Write(preview);
 
             if (img == 1)
-                HolidayMailer.Properties.Resources._1.Save(img + ".jpg");
+                HolidayMailer.Properties.Resources.img1.Save(img + ".jpg");
 
             if (img == 2)
-                HolidayMailer.Properties.Resources._2.Save(img + ".jpg");
+                HolidayMailer.Properties.Resources.img2.Save(img + ".jpg");
 
             System.Diagnostics.Process.Start("HTMLPreview.html");
 
