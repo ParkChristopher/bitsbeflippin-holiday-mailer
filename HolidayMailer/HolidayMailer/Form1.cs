@@ -16,6 +16,7 @@ namespace HolidayMailer
         NetworkManager mailer;
         List<Contact> contactList;
         User currentUser;
+        string[] files;
 
         public Form1()
         {
@@ -94,6 +95,9 @@ namespace HolidayMailer
 
         private void sendEmails()
         {
+
+
+
             int img = 1;
 
             if (comboBoxTemplate.Text == "RedTemplate.jpg")
@@ -121,7 +125,7 @@ namespace HolidayMailer
             try
             {
                 if (mailer != null)
-                    mailer.send();
+                    mailer.send(null); // need to create a file
             }
 
             catch (Exception e)
@@ -145,8 +149,11 @@ namespace HolidayMailer
         {
             String selected = comboBoxTemplate.Text;
 
-            //due to how we handle resources, this may need to be updated
-            pictureBoxPreview.Image = Image.FromFile(selected);
+            if (selected == "RedTemplate.jpg")
+                pictureBoxPreview.Image = HolidayMailer.Properties.Resources.RedTemplate;
+
+            else
+                pictureBoxPreview.Image = HolidayMailer.Properties.Resources.RedAndBlackTemplate;
         }
 
         private void buttonDeleteSelected_Click(object sender, EventArgs e)

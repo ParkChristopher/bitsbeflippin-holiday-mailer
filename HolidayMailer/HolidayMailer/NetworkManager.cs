@@ -38,10 +38,18 @@ namespace HolidayMailer
             message.IsBodyHtml = true;
         }
 
-        public void send()
+        public void send(string attach)
         {
             string html = "";
             Attachment bgImg;
+            Attachment requiredAttachment;//
+
+            if (attach == null)
+                requiredAttachment = null;
+
+            else
+                requiredAttachment = new Attachment(attach);
+
 
             if (img == 1)
             {
@@ -74,6 +82,9 @@ namespace HolidayMailer
                 message.Body = HTMLManager.generateHTMLForSending(theSender, current, body, html, img);
                 message.IsBodyHtml = true;
                 message.Attachments.Add(bgImg);
+
+                if (requiredAttachment != null)
+                    message.Attachments.Add(bgImg);
 
                 try
                 {
