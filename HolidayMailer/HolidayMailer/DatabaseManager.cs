@@ -52,6 +52,9 @@ namespace HolidayMailer
 
             executeQuery(sql);
         }
+
+        //MISSING FEATURE: Retrieve contacts by last inital
+
         public List<Contact> retrieveContacts()
         {
             DataTable dt = new DataTable();

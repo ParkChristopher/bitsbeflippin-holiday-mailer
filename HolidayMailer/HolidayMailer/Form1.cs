@@ -26,14 +26,10 @@ namespace HolidayMailer
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        {}
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        {}
 
         private void buttonAddContact_Click(object sender, EventArgs e)
         {
@@ -43,6 +39,8 @@ namespace HolidayMailer
             clearContacts();
             loadContacts();
         }
+
+        //MISSING FEATURE: Load contacts by specified last initial (Also see comment in DatabaseManager)
 
         private void loadContacts()
         {
