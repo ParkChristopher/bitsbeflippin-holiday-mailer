@@ -52,10 +52,8 @@ namespace HolidayMailer
         {
             DatabaseManager database = new DatabaseManager();
             contactList = database.retrieveContacts();
-            
-            foreach (Contact contact in contactList)
-                dataGridViewContactList.Rows.Add(contact.FirstName, contact.LastName,
-                    contact.Email, contact.SentPrevious);
+
+            updateGridView();
         }
 
         private void clearContacts()
@@ -284,6 +282,28 @@ namespace HolidayMailer
             buttonAttach.Enabled = true;
             buttonRemove.Enabled = false;
             files = null;
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            clearContacts();
+            if (textBoxSearch.Text == "")
+            {
+                loadContacts();
+                return;
+            }
+
+            DatabaseManager dbase = new DatabaseManager();
+            contactList = dbase.retrieveByLastName(textBoxSearch.Text);
+
+            updateGridView();
+        }
+
+        private void updateGridView()
+        {
+            foreach (Contact contact in contactList)
+                dataGridViewContactList.Rows.Add(contact.FirstName, contact.LastName,
+                    contact.Email, contact.SentPrevious);
         }
     }
 }

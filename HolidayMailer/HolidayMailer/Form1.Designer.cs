@@ -73,6 +73,8 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -231,6 +233,8 @@
             // mainWindow.Panel2
             // 
             this.mainWindow.Panel2.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
+            this.mainWindow.Panel2.Controls.Add(this.labelSearch);
+            this.mainWindow.Panel2.Controls.Add(this.textBoxSearch);
             this.mainWindow.Panel2.Controls.Add(this.labelEmailout2);
             this.mainWindow.Panel2.Controls.Add(this.labelEmail);
             this.mainWindow.Panel2.Controls.Add(this.labelUsernameout);
@@ -462,11 +466,11 @@
             this.columnLastName,
             this.columnEmail,
             this.columnPreviousSender});
-            this.dataGridViewContactList.Location = new System.Drawing.Point(9, 12);
+            this.dataGridViewContactList.Location = new System.Drawing.Point(9, 41);
             this.dataGridViewContactList.Name = "dataGridViewContactList";
             this.dataGridViewContactList.ReadOnly = true;
             this.dataGridViewContactList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewContactList.Size = new System.Drawing.Size(730, 581);
+            this.dataGridViewContactList.Size = new System.Drawing.Size(730, 552);
             this.dataGridViewContactList.TabIndex = 4;
             // 
             // ColumnFirstName
@@ -525,6 +529,23 @@
             this.buttonAddContact.Text = "&Add Contact";
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(56, 15);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 10;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(9, 18);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(41, 13);
+            this.labelSearch.TabIndex = 11;
+            this.labelSearch.Text = "Search";
             // 
             // Form1
             // 
@@ -602,6 +623,8 @@
         private System.Windows.Forms.Label labelAttachFile;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonAttach;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
 
     }
 }
