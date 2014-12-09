@@ -89,11 +89,9 @@ namespace HolidayMailer
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            //backup contact list
             List<Contact> temp = new List<Contact>();
             List<Contact> bckup = contactList;
             
-            //get subset of contact list
             if (radioButtonSendPrevious.Checked)
             {
                 foreach (Contact contact in contactList)
@@ -119,8 +117,6 @@ namespace HolidayMailer
             buttonSend.Enabled = false;
             sendEmails();
             buttonSend.Enabled = true;
-
-            //restore contact list to original set
             contactList = bckup;
         }
 
@@ -219,11 +215,6 @@ namespace HolidayMailer
 
         }
 
-        private void buttonPreview_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonPreview_Click_1(object sender, EventArgs e)
         {
             string preview = "";
@@ -294,13 +285,17 @@ namespace HolidayMailer
             {
                 files = ofd.FileNames;
                 buttonAttach.Enabled = false;
+                attachFileToolStripMenuItem.Enabled = false;
                 buttonRemove.Enabled = true;
+                removeAttachmentToolStripMenuItem.Enabled = true;
             }
 
             else
             {
                 buttonAttach.Enabled = true;
+                attachFileToolStripMenuItem.Enabled = true;
                 buttonRemove.Enabled = false;
+                removeAttachmentToolStripMenuItem.Enabled = false;
             }
             
         }
@@ -308,7 +303,9 @@ namespace HolidayMailer
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             buttonAttach.Enabled = true;
+            attachFileToolStripMenuItem.Enabled = true;
             buttonRemove.Enabled = false;
+            removeAttachmentToolStripMenuItem.Enabled = false;
             files = null;
         }
 
@@ -332,6 +329,50 @@ namespace HolidayMailer
             foreach (Contact contact in contactList)
                 dataGridViewContactList.Rows.Add(contact.FirstName, contact.LastName,
                     contact.Email, contact.SentPrevious);
+        }
+
+        private void removeContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonRemove_Click(sender, e);
+        }
+
+        private void previewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonPreview_Click_1(sender, e);
+        }
+
+        private void sendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonSend_Click(sender, e);
+        }
+
+        private void attachFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonAttach_Click(sender, e);
+        }
+
+        private void removeAttachmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonRemove_Click(sender, e);
+        }
+
+        private void tutorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Managing Contacts:\n" +
+                "-Click Add Contact and enter required information.\n" +
+                "-Select contacts in the list and click Delete to remove them.\n" +
+                "-Contacts can be sorted by clicking on the column headers in the list.\n" +
+                "-Text entered in the search bar refines the contact list by last name.\n\n" +
+                "Enter sender email:\n" +
+                "-File -> Enter User (Ctrl+E)\n\n" +
+                "Message Crafting Options:\n" +
+                "-Choose who to send the emails to (Send to)\n" +
+                "-Choose A template.\n" +
+                "-Choose the subject line of the email to be sent.\n" +
+                "-Attach a file if preferred.\n" +
+                "-Click Preview to view the email being created.\n" +
+                "-Click send.", "How To", MessageBoxButtons.OK);
+
         }
     }
 }

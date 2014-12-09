@@ -167,6 +167,8 @@
     <None Include="Resources\RedAndBlackTemplate.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Mail.ico" />
+    <None Include="Resources\mailicon.bmp" />
     <None Include="index2.html" />
     <None Include="index1.html" />
     <None Include="2.jpg" />

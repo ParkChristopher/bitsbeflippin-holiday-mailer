@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterUserCtrlAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSelectedContactsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +57,12 @@
             this.comboBoxTemplate = new System.Windows.Forms.ComboBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.groupBoxSendTo = new System.Windows.Forms.GroupBox();
+            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
+            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
             this.radioButtonSendAll = new System.Windows.Forms.RadioButton();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelEmailout2 = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelUsernameout = new System.Windows.Forms.Label();
@@ -68,13 +72,14 @@
             this.columnLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPreviousSender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
-            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
+            this.removeContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attachFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeAttachmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -102,6 +107,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enterUserCtrlAToolStripMenuItem,
+            this.sendToolStripMenuItem,
+            this.previewToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -110,41 +117,40 @@
             // enterUserCtrlAToolStripMenuItem
             // 
             this.enterUserCtrlAToolStripMenuItem.Name = "enterUserCtrlAToolStripMenuItem";
-            this.enterUserCtrlAToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.enterUserCtrlAToolStripMenuItem.Text = "Enter User Ctrl+A";
+            this.enterUserCtrlAToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.enterUserCtrlAToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.enterUserCtrlAToolStripMenuItem.Text = "Enter User";
             this.enterUserCtrlAToolStripMenuItem.Click += new System.EventHandler(this.enterUserCtrlAToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editSelectedContactsToolStripMenuItem1,
-            this.addContactToolStripMenuItem});
+            this.addContactToolStripMenuItem,
+            this.removeContactToolStripMenuItem,
+            this.attachFileToolStripMenuItem,
+            this.removeAttachmentToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // editSelectedContactsToolStripMenuItem1
-            // 
-            this.editSelectedContactsToolStripMenuItem1.Name = "editSelectedContactsToolStripMenuItem1";
-            this.editSelectedContactsToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.editSelectedContactsToolStripMenuItem1.Text = "Edit Selected Contacts";
-            // 
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.addContactToolStripMenuItem.Text = "Add Contact";
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.addContactToolStripMenuItem.Text = "Add Contact     Alt + A";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutF1ToolStripMenuItem});
+            this.aboutF1ToolStripMenuItem,
+            this.tutorialToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -152,8 +158,9 @@
             // aboutF1ToolStripMenuItem
             // 
             this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
-            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.aboutF1ToolStripMenuItem.Text = "About F1";
+            this.aboutF1ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutF1ToolStripMenuItem.Text = "About";
             this.aboutF1ToolStripMenuItem.Click += new System.EventHandler(this.aboutF1ToolStripMenuItem_Click);
             // 
             // menuBarFile
@@ -240,7 +247,6 @@
             this.mainWindow.Panel2.Controls.Add(this.labelUsernameout);
             this.mainWindow.Panel2.Controls.Add(this.labelUsername);
             this.mainWindow.Panel2.Controls.Add(this.dataGridViewContactList);
-            this.mainWindow.Panel2.Controls.Add(this.buttonEditSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonDeleteSelected);
             this.mainWindow.Panel2.Controls.Add(this.buttonAddContact);
             this.mainWindow.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
@@ -302,7 +308,7 @@
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.Size = new System.Drawing.Size(57, 23);
             this.buttonPreview.TabIndex = 11;
-            this.buttonPreview.Text = "Preview";
+            this.buttonPreview.Text = "&Preview";
             this.buttonPreview.UseVisualStyleBackColor = true;
             this.buttonPreview.Click += new System.EventHandler(this.buttonPreview_Click_1);
             // 
@@ -378,6 +384,26 @@
             this.groupBoxSendTo.TabStop = false;
             this.groupBoxSendTo.Text = "Send to:";
             // 
+            // radioButtonSendPrevious
+            // 
+            this.radioButtonSendPrevious.AutoSize = true;
+            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 52);
+            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
+            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
+            this.radioButtonSendPrevious.TabIndex = 2;
+            this.radioButtonSendPrevious.Text = "Previous Sender";
+            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSendSelected
+            // 
+            this.radioButtonSendSelected.AutoSize = true;
+            this.radioButtonSendSelected.Location = new System.Drawing.Point(14, 35);
+            this.radioButtonSendSelected.Name = "radioButtonSendSelected";
+            this.radioButtonSendSelected.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonSendSelected.TabIndex = 1;
+            this.radioButtonSendSelected.Text = "Selected";
+            this.radioButtonSendSelected.UseVisualStyleBackColor = true;
+            // 
             // radioButtonSendAll
             // 
             this.radioButtonSendAll.AutoSize = true;
@@ -400,10 +426,27 @@
             this.pictureBoxPreview.TabIndex = 0;
             this.pictureBoxPreview.TabStop = false;
             // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(9, 18);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(95, 13);
+            this.labelSearch.TabIndex = 11;
+            this.labelSearch.Text = "Search Last Name";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(110, 15);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 10;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            // 
             // labelEmailout2
             // 
             this.labelEmailout2.AutoSize = true;
-            this.labelEmailout2.Location = new System.Drawing.Point(468, 599);
+            this.labelEmailout2.Location = new System.Drawing.Point(391, 603);
             this.labelEmailout2.Name = "labelEmailout2";
             this.labelEmailout2.Size = new System.Drawing.Size(0, 13);
             this.labelEmailout2.TabIndex = 9;
@@ -411,7 +454,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(427, 599);
+            this.labelEmail.Location = new System.Drawing.Point(350, 603);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(35, 13);
             this.labelEmail.TabIndex = 7;
@@ -420,7 +463,7 @@
             // labelUsernameout
             // 
             this.labelUsernameout.AutoSize = true;
-            this.labelUsernameout.Location = new System.Drawing.Point(320, 599);
+            this.labelUsernameout.Location = new System.Drawing.Point(243, 603);
             this.labelUsernameout.Name = "labelUsernameout";
             this.labelUsernameout.Size = new System.Drawing.Size(0, 13);
             this.labelUsernameout.TabIndex = 6;
@@ -428,7 +471,7 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(276, 599);
+            this.labelUsername.Location = new System.Drawing.Point(199, 603);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(38, 13);
             this.labelUsername.TabIndex = 5;
@@ -456,6 +499,7 @@
             // ColumnFirstName
             // 
             this.ColumnFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnFirstName.FillWeight = 90F;
             this.ColumnFirstName.HeaderText = "First Name";
             this.ColumnFirstName.Name = "ColumnFirstName";
             this.ColumnFirstName.ReadOnly = true;
@@ -463,6 +507,7 @@
             // columnLastName
             // 
             this.columnLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnLastName.FillWeight = 90F;
             this.columnLastName.HeaderText = "Last Name";
             this.columnLastName.Name = "columnLastName";
             this.columnLastName.ReadOnly = true;
@@ -477,22 +522,14 @@
             // columnPreviousSender
             // 
             this.columnPreviousSender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnPreviousSender.FillWeight = 60F;
             this.columnPreviousSender.HeaderText = "Previous";
             this.columnPreviousSender.Name = "columnPreviousSender";
             this.columnPreviousSender.ReadOnly = true;
             // 
-            // buttonEditSelected
-            // 
-            this.buttonEditSelected.Location = new System.Drawing.Point(106, 599);
-            this.buttonEditSelected.Name = "buttonEditSelected";
-            this.buttonEditSelected.Size = new System.Drawing.Size(82, 23);
-            this.buttonEditSelected.TabIndex = 3;
-            this.buttonEditSelected.Text = "&Edit Selected";
-            this.buttonEditSelected.UseVisualStyleBackColor = true;
-            // 
             // buttonDeleteSelected
             // 
-            this.buttonDeleteSelected.Location = new System.Drawing.Point(3, 599);
+            this.buttonDeleteSelected.Location = new System.Drawing.Point(90, 599);
             this.buttonDeleteSelected.Name = "buttonDeleteSelected";
             this.buttonDeleteSelected.Size = new System.Drawing.Size(97, 23);
             this.buttonDeleteSelected.TabIndex = 2;
@@ -502,7 +539,7 @@
             // 
             // buttonAddContact
             // 
-            this.buttonAddContact.Location = new System.Drawing.Point(194, 599);
+            this.buttonAddContact.Location = new System.Drawing.Point(9, 599);
             this.buttonAddContact.Name = "buttonAddContact";
             this.buttonAddContact.Size = new System.Drawing.Size(75, 23);
             this.buttonAddContact.TabIndex = 1;
@@ -510,42 +547,53 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
-            // textBoxSearch
+            // removeContactToolStripMenuItem
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(56, 15);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSearch.TabIndex = 10;
-            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.removeContactToolStripMenuItem.Text = "Remove Contact     Alt+D";
+            this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.removeContactToolStripMenuItem_Click);
             // 
-            // labelSearch
+            // sendToolStripMenuItem
             // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(9, 18);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(41, 13);
-            this.labelSearch.TabIndex = 11;
-            this.labelSearch.Text = "Search";
+            this.sendToolStripMenuItem.Name = "sendToolStripMenuItem";
+            this.sendToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.sendToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.sendToolStripMenuItem.Text = "Send";
+            this.sendToolStripMenuItem.Click += new System.EventHandler(this.sendToolStripMenuItem_Click);
             // 
-            // radioButtonSendPrevious
+            // previewToolStripMenuItem
             // 
-            this.radioButtonSendPrevious.AutoSize = true;
-            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 52);
-            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
-            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
-            this.radioButtonSendPrevious.TabIndex = 2;
-            this.radioButtonSendPrevious.Text = "Previous Sender";
-            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
+            this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
+            this.previewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.previewToolStripMenuItem.Text = "Preview";
+            this.previewToolStripMenuItem.Click += new System.EventHandler(this.previewToolStripMenuItem_Click);
             // 
-            // radioButtonSendSelected
+            // attachFileToolStripMenuItem
             // 
-            this.radioButtonSendSelected.AutoSize = true;
-            this.radioButtonSendSelected.Location = new System.Drawing.Point(14, 35);
-            this.radioButtonSendSelected.Name = "radioButtonSendSelected";
-            this.radioButtonSendSelected.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonSendSelected.TabIndex = 1;
-            this.radioButtonSendSelected.Text = "Selected";
-            this.radioButtonSendSelected.UseVisualStyleBackColor = true;
+            this.attachFileToolStripMenuItem.Name = "attachFileToolStripMenuItem";
+            this.attachFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
+            this.attachFileToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.attachFileToolStripMenuItem.Text = "Attach File";
+            this.attachFileToolStripMenuItem.Click += new System.EventHandler(this.attachFileToolStripMenuItem_Click);
+            // 
+            // removeAttachmentToolStripMenuItem
+            // 
+            this.removeAttachmentToolStripMenuItem.Enabled = false;
+            this.removeAttachmentToolStripMenuItem.Name = "removeAttachmentToolStripMenuItem";
+            this.removeAttachmentToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
+            this.removeAttachmentToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.removeAttachmentToolStripMenuItem.Text = "Remove Attachment";
+            this.removeAttachmentToolStripMenuItem.Click += new System.EventHandler(this.removeAttachmentToolStripMenuItem_Click);
+            // 
+            // tutorialToolStripMenuItem
+            // 
+            this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
+            this.tutorialToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tutorialToolStripMenuItem.Text = "Tutorial";
+            this.tutorialToolStripMenuItem.Click += new System.EventHandler(this.tutorialToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -556,6 +604,7 @@
             this.Controls.Add(this.mainWindow);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuBar;
             this.Name = "Form1";
             this.Text = "Holiday Mailer";
@@ -586,16 +635,11 @@
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.GroupBox groupBoxSendTo;
         private System.Windows.Forms.RadioButton radioButtonSendAll;
-        private System.Windows.Forms.Button buttonEditSelected;
         private System.Windows.Forms.Button buttonDeleteSelected;
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.ToolStripMenuItem toolstripMainSender;
         private System.Windows.Forms.DataGridView dataGridViewContactList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxTemplate;
         private System.Windows.Forms.TextBox textBoxCustomMessage;
@@ -611,7 +655,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterUserCtrlAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editSelectedContactsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutF1ToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxSubject;
@@ -625,6 +668,16 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.RadioButton radioButtonSendPrevious;
         private System.Windows.Forms.RadioButton radioButtonSendSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnPreviousSender;
+        private System.Windows.Forms.ToolStripMenuItem removeContactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem previewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attachFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeAttachmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
 
     }
 }
