@@ -259,10 +259,17 @@ namespace HolidayMailer
             DialogResult result = ofd.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
                 files = ofd.FileNames;
-
-            if (files != null)
+                buttonAttach.Enabled = false;
                 buttonRemove.Enabled = true;
+            }
+
+            else
+            {
+                buttonAttach.Enabled = true;
+                buttonRemove.Enabled = false;
+            }
             
         }
 

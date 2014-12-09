@@ -70,5 +70,14 @@ namespace HolidayMailer
         private void actionFormClosed(object sender, FormClosedEventArgs e)
         {
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxLastName.Text = "";
+            textBoxFirstName.Text = "";
+            textBoxEmail.Text = "";
+            textBoxPassword.Text = "";
+            comboBoxProviders.Text = "";
+        }
     }
 }
