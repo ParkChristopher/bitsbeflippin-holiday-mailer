@@ -46,8 +46,6 @@ namespace HolidayMailer
             loadContacts();
         }
 
-        //MISSING FEATURE: Load contacts by specified last initial (Also see comment in DatabaseManager)
-
         private void loadContacts()
         {
             DatabaseManager database = new DatabaseManager();
@@ -91,9 +89,39 @@ namespace HolidayMailer
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            //backup contact list
+            List<Contact> temp = new List<Contact>();
+            List<Contact> bckup = contactList;
+            
+            //get subset of contact list
+            if (radioButtonSendPrevious.Checked)
+            {
+                foreach (Contact contact in contactList)
+                    if (contact.SentPrevious)
+                        temp.Add(contact);
+
+                contactList = temp;
+            }
+
+            if (radioButtonSendSelected.Checked)
+            {
+                foreach (DataGridViewRow row in dataGridViewContactList.SelectedRows)
+                {
+                    temp.Add(new Contact(row.Cells[0].Value.ToString(),
+                        row.Cells[1].Value.ToString(),
+                        row.Cells[2].Value.ToString(),
+                        false));
+                }
+
+                contactList = temp;
+            }
+
             buttonSend.Enabled = false;
             sendEmails();
             buttonSend.Enabled = true;
+
+            //restore contact list to original set
+            contactList = bckup;
         }
 
         private void sendEmails()

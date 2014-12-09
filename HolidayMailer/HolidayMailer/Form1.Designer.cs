@@ -57,8 +57,6 @@
             this.comboBoxTemplate = new System.Windows.Forms.ComboBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.groupBoxSendTo = new System.Windows.Forms.GroupBox();
-            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
-            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
             this.radioButtonSendAll = new System.Windows.Forms.RadioButton();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.labelEmailout2 = new System.Windows.Forms.Label();
@@ -75,6 +73,8 @@
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
+            this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -378,26 +378,6 @@
             this.groupBoxSendTo.TabStop = false;
             this.groupBoxSendTo.Text = "Send to:";
             // 
-            // radioButtonSendPrevious
-            // 
-            this.radioButtonSendPrevious.AutoSize = true;
-            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 52);
-            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
-            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
-            this.radioButtonSendPrevious.TabIndex = 2;
-            this.radioButtonSendPrevious.Text = "Previous Sender";
-            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSendSelected
-            // 
-            this.radioButtonSendSelected.AutoSize = true;
-            this.radioButtonSendSelected.Location = new System.Drawing.Point(14, 35);
-            this.radioButtonSendSelected.Name = "radioButtonSendSelected";
-            this.radioButtonSendSelected.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonSendSelected.TabIndex = 1;
-            this.radioButtonSendSelected.Text = "Selected";
-            this.radioButtonSendSelected.UseVisualStyleBackColor = true;
-            // 
             // radioButtonSendAll
             // 
             this.radioButtonSendAll.AutoSize = true;
@@ -547,6 +527,26 @@
             this.labelSearch.TabIndex = 11;
             this.labelSearch.Text = "Search";
             // 
+            // radioButtonSendPrevious
+            // 
+            this.radioButtonSendPrevious.AutoSize = true;
+            this.radioButtonSendPrevious.Location = new System.Drawing.Point(14, 52);
+            this.radioButtonSendPrevious.Name = "radioButtonSendPrevious";
+            this.radioButtonSendPrevious.Size = new System.Drawing.Size(103, 17);
+            this.radioButtonSendPrevious.TabIndex = 2;
+            this.radioButtonSendPrevious.Text = "Previous Sender";
+            this.radioButtonSendPrevious.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSendSelected
+            // 
+            this.radioButtonSendSelected.AutoSize = true;
+            this.radioButtonSendSelected.Location = new System.Drawing.Point(14, 35);
+            this.radioButtonSendSelected.Name = "radioButtonSendSelected";
+            this.radioButtonSendSelected.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonSendSelected.TabIndex = 1;
+            this.radioButtonSendSelected.Text = "Selected";
+            this.radioButtonSendSelected.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,8 +585,6 @@
         private System.Windows.Forms.SplitContainer mainWindow;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.GroupBox groupBoxSendTo;
-        private System.Windows.Forms.RadioButton radioButtonSendPrevious;
-        private System.Windows.Forms.RadioButton radioButtonSendSelected;
         private System.Windows.Forms.RadioButton radioButtonSendAll;
         private System.Windows.Forms.Button buttonEditSelected;
         private System.Windows.Forms.Button buttonDeleteSelected;
@@ -625,6 +623,8 @@
         private System.Windows.Forms.Button buttonAttach;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.RadioButton radioButtonSendPrevious;
+        private System.Windows.Forms.RadioButton radioButtonSendSelected;
 
     }
 }
