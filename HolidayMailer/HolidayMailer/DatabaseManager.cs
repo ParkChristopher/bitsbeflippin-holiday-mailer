@@ -28,10 +28,20 @@ namespace HolidayMailer
         public void add(string lname, string fname, string email, bool lastYear)
         {
             string sql = "INSERT INTO default_user (LastName, FirstName, Email, LastYear)"
-                        + "VALUES (\'" + lname + "\', \'" + fname + "\', \'" + email + "\', \'"
-                        + lastYear + "\');";
+                        + "VALUES (@lname, @fname, @email, @lastYear);";
 
-            executeQuery(sql);
+            setConnection();
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = sql;
+            
+            command.Parameters.AddWithValue("@lname", lname);
+            command.Parameters.AddWithValue("@fname", fname);
+            command.Parameters.AddWithValue("@email", email);
+            command.Parameters.AddWithValue("@lastYear", lastYear);
+
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
         private void formatInput(string input)
