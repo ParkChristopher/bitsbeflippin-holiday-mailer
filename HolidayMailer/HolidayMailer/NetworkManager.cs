@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
 using System.Collections;
+using System.IO;
 
 //usage: NetworkManager manager = new GmailManager(User sender, Contact[] contacts, string subject, string body);
 //then to send: manager.send();
@@ -34,7 +35,7 @@ namespace HolidayMailer
             message = new MailMessage(fromAddress, toAddress);
             message.Subject = subject;
             message.Body = body;
-            message.IsBodyHtml = true;//new
+            message.IsBodyHtml = true;
         }
 
         public void send()
@@ -45,17 +46,23 @@ namespace HolidayMailer
             if (img == 1)
             {
                 html = HolidayMailer.Properties.Resources.index1;
-                HolidayMailer.Properties.Resources._1.Save("1.jpg");
+
+                if ( !File.Exists("1.jpg"))
+                    HolidayMailer.Properties.Resources._1.Save("1.jpg");
+
                 bgImg = new Attachment("1.jpg");
-                bgImg.ContentId = "1";// this will need to be able to switch between 1 and 2
+                bgImg.ContentId = "1";
             }
 
             else
             {
                 html = HolidayMailer.Properties.Resources.index2;
-                HolidayMailer.Properties.Resources._2.Save("2.jpg");
+
+                if (!File.Exists("2.jpg"))
+                    HolidayMailer.Properties.Resources._2.Save("2.jpg");
+
                 bgImg = new Attachment("2.jpg");
-                bgImg.ContentId = "2";// this will need to be able to switch between 1 and 2
+                bgImg.ContentId = "2";
             }
 
             foreach (Contact current in contacts)
@@ -64,10 +71,7 @@ namespace HolidayMailer
 
                 message = new MailMessage(fromAddress, toAddress);
                 message.Subject = subject;
-                //message.Body = body;
                 message.Body = HTMLManager.generateHTMLForSending(theSender, current, body, html, img);
-
-                //new
                 message.IsBodyHtml = true;
                 message.Attachments.Add(bgImg);
 
@@ -77,12 +81,13 @@ namespace HolidayMailer
                 }
                 catch (Exception E)
                 {
-                    System.Windows.Forms.MessageBox.Show(E.ToString());
-                    //no console available
-                    //Console.WriteLine(E.ToString());
-                    //Console.ReadLine();
+                    //System.Windows.Forms.MessageBox.Show(E.ToString());
+                    System.Windows.Forms.MessageBox.Show("Please check your user authentication settings and try again!");
+                    return;
                 }
             }
+
+            System.Windows.Forms.MessageBox.Show(contacts.Count + " emails have been sent!");
         }
     }
 

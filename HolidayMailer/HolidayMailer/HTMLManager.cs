@@ -31,7 +31,7 @@ namespace HolidayMailer
             {
                 ret = ret.Replace("1.jpg", "cid:1");
 
-                temp += tokens[0];
+                temp += tokens[0] + " ";
                 j = 1;
 
                 for (int i = 1; i < tokenNum; i++)
@@ -80,7 +80,7 @@ namespace HolidayMailer
 
             if (template == 1)
             {
-                temp += tokens[0];
+                temp += tokens[0] + " ";
                 j = 1;
 
                 for (int i = 1; i < tokenNum; i++)

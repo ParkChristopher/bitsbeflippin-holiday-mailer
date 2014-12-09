@@ -23,7 +23,6 @@ namespace HolidayMailer
             loadContacts();
 
             comboBoxTemplate.SelectedIndex = 0;
-
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -68,8 +67,12 @@ namespace HolidayMailer
         private void initUser()
         {
             User newUser = new User();
-            userForm userForm = new userForm(newUser);
-            
+
+            if (currentUser == null)
+                currentUser = new User();
+
+            userForm userForm = new userForm(currentUser);
+
             userForm.ShowDialog();
             newUser = userForm.User;
 
@@ -78,34 +81,28 @@ namespace HolidayMailer
 
             else
             {
-                currentUser = newUser;
                 labelUsernameout.Text = currentUser.FirstName + " " + currentUser.LastName;
                 labelEmailout2.Text = currentUser.Email;
-                //labeuser
+                buttonSend.Enabled = true;
             }
         }
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            buttonSend.Enabled = false;
             sendEmails();
+            buttonSend.Enabled = true;
         }
 
         private void sendEmails()
         {
-            string preview = "";
             int img = 1;
 
             if (comboBoxTemplate.Text == "RedTemplate.jpg")
-            {
                 img = 1;
-                //preview = HolidayMailer.Properties.Resources.index1;
-            }
 
             if (comboBoxTemplate.Text == "RedAndBlackTemplate.jpg")
-            {
                 img = 2;
-               // preview = HolidayMailer.Properties.Resources.index2;
-            }
 
 
             if ( currentUser == null)
@@ -115,16 +112,13 @@ namespace HolidayMailer
             }
 
             if (currentUser.EmailService == "Gmail")
-                //mailer = new GmailManager(currentUser, contactList, "Some Subject", "Some body");
-                mailer = new GmailManager(currentUser, contactList, "Happy Holidays!", textBoxCustomMessage.Text, img);
+                mailer = new GmailManager(currentUser, contactList, textBoxSubject.Text, textBoxCustomMessage.Text, img);
 
             if (currentUser.EmailService == "Hotmail")
-                mailer = new HotmailManager(currentUser, contactList, "Happy Holidays!", "Some body", img);
+                mailer = new HotmailManager(currentUser, contactList, textBoxSubject.Text, textBoxCustomMessage.Text, img);
 
             if (currentUser.EmailService == "Yahoo")
-                mailer = new YahooManager(currentUser, contactList, "Happy Holidays!", "Some body", img);
-
-            //MessageBox.Show("Test");
+                mailer = new YahooManager(currentUser, contactList, textBoxSubject.Text, textBoxCustomMessage.Text, img);
 
             try
             {
@@ -134,8 +128,7 @@ namespace HolidayMailer
 
             catch (Exception e)
             {
-                MessageBox.Show("Mail was not sent. Improper sender configuration.");
-                //this apparently doesn't work. no exception is thrown with improper sender configs
+                //MessageBox.Show(e.ToString());
             }
         }
 
@@ -196,6 +189,9 @@ namespace HolidayMailer
         {
             string preview = "";
             int img = 1;
+            User testu;// = currentUser;
+            Contact testc;
+            StreamWriter fout;
 
             if (comboBoxTemplate.Text == "RedTemplate.jpg")
             {
@@ -209,13 +205,17 @@ namespace HolidayMailer
                 preview = HolidayMailer.Properties.Resources.index2;
             }
 
-            //these can be changed to an actual user or to some dummy stufff
-            User testu = new User("Leonard", "Nimoy", "mindfusion@yahoo.com");
-            Contact testc = new Contact("Shatner", "William", "assimilatethis@email.com", false);
+            if (currentUser == null)
+                testu = new User("Leonard", "Nimoy", "mindfusion@yahoo.com", "garbage");
+
+            else
+                testu = currentUser;
+
+            testc = new Contact("Shatner", "William", "assimilatethis@email.com", false);
 
             preview = HTMLManager.generateHTMLForPreviewing(testu, testc, textBoxCustomMessage.Text, preview, img);
 
-            StreamWriter fout = new StreamWriter("HTMLPreview.html");
+            fout = new StreamWriter("HTMLPreview.html");
 
             fout.Write(preview);
 

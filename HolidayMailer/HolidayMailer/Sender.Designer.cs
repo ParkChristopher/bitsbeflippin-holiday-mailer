@@ -153,6 +153,7 @@
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonClear
             // 
@@ -185,6 +186,7 @@
             this.Controls.Add(this.labelFirstName);
             this.Name = "userForm";
             this.Text = "Sender";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.actionFormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

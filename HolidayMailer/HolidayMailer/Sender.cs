@@ -40,7 +40,11 @@ namespace HolidayMailer
 
         private void initializeUser()
         {
-            //sender = new User(textBoxLastName.Text, textBoxFirstName.Text, textBoxEmailAddress.Text, textBoxPassword.Text);
+            if ( textBoxEmail.Text == "" || textBoxPassword.Text == "")
+            {
+                MessageBox.Show("Email and/or password fields are blank.");
+                return;
+            }
 
             this.sender.LastName = textBoxLastName.Text;
             this.sender.FirstName = textBoxFirstName.Text;
@@ -50,11 +54,15 @@ namespace HolidayMailer
 
             MessageBox.Show("User has been initialized.");
             this.Close();
-                
+        }
 
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.sender = null;
+        }
 
-
-            //need to check these for a user trying to break the progra
+        private void actionFormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

@@ -53,8 +53,6 @@
             this.radioButtonSendPrevious = new System.Windows.Forms.RadioButton();
             this.radioButtonSendSelected = new System.Windows.Forms.RadioButton();
             this.radioButtonSendAll = new System.Windows.Forms.RadioButton();
-            this.buttonRemoveAttachment = new System.Windows.Forms.Button();
-            this.buttonAttachFile = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.labelEmailout2 = new System.Windows.Forms.Label();
@@ -70,6 +68,10 @@
             this.buttonEditSelected = new System.Windows.Forms.Button();
             this.buttonDeleteSelected = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
+            this.labelSubject = new System.Windows.Forms.Label();
+            this.textBoxSubject = new System.Windows.Forms.TextBox();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindow)).BeginInit();
             this.mainWindow.Panel1.SuspendLayout();
@@ -96,7 +98,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterUserCtrlAToolStripMenuItem});
+            this.enterUserCtrlAToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -111,7 +114,8 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editSelectedContactsToolStripMenuItem1});
+            this.editSelectedContactsToolStripMenuItem1,
+            this.addContactToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -195,6 +199,8 @@
             // mainWindow.Panel1
             // 
             this.mainWindow.Panel1.BackgroundImage = global::HolidayMailer.Properties.Resources.snowflakes;
+            this.mainWindow.Panel1.Controls.Add(this.textBoxSubject);
+            this.mainWindow.Panel1.Controls.Add(this.labelSubject);
             this.mainWindow.Panel1.Controls.Add(this.buttonPreview);
             this.mainWindow.Panel1.Controls.Add(this.labelPreview);
             this.mainWindow.Panel1.Controls.Add(this.labelCustomMessage);
@@ -203,8 +209,6 @@
             this.mainWindow.Panel1.Controls.Add(this.comboBoxTemplate);
             this.mainWindow.Panel1.Controls.Add(this.buttonSend);
             this.mainWindow.Panel1.Controls.Add(this.groupBoxSendTo);
-            this.mainWindow.Panel1.Controls.Add(this.buttonRemoveAttachment);
-            this.mainWindow.Panel1.Controls.Add(this.buttonAttachFile);
             this.mainWindow.Panel1.Controls.Add(this.labelUser);
             this.mainWindow.Panel1.Controls.Add(this.pictureBoxPreview);
             this.mainWindow.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
@@ -228,7 +232,7 @@
             // 
             // buttonPreview
             // 
-            this.buttonPreview.Location = new System.Drawing.Point(103, 130);
+            this.buttonPreview.Location = new System.Drawing.Point(118, 599);
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.Size = new System.Drawing.Size(81, 23);
             this.buttonPreview.TabIndex = 11;
@@ -239,7 +243,7 @@
             // labelPreview
             // 
             this.labelPreview.AutoSize = true;
-            this.labelPreview.Location = new System.Drawing.Point(15, 337);
+            this.labelPreview.Location = new System.Drawing.Point(15, 339);
             this.labelPreview.Name = "labelPreview";
             this.labelPreview.Size = new System.Drawing.Size(45, 13);
             this.labelPreview.TabIndex = 10;
@@ -248,7 +252,7 @@
             // labelCustomMessage
             // 
             this.labelCustomMessage.AutoSize = true;
-            this.labelCustomMessage.Location = new System.Drawing.Point(15, 224);
+            this.labelCustomMessage.Location = new System.Drawing.Point(15, 234);
             this.labelCustomMessage.Name = "labelCustomMessage";
             this.labelCustomMessage.Size = new System.Drawing.Size(88, 13);
             this.labelCustomMessage.TabIndex = 9;
@@ -257,7 +261,7 @@
             // labelTemplate
             // 
             this.labelTemplate.AutoSize = true;
-            this.labelTemplate.Location = new System.Drawing.Point(15, 170);
+            this.labelTemplate.Location = new System.Drawing.Point(15, 129);
             this.labelTemplate.Name = "labelTemplate";
             this.labelTemplate.Size = new System.Drawing.Size(51, 13);
             this.labelTemplate.TabIndex = 8;
@@ -265,12 +269,13 @@
             // 
             // textBoxCustomMessage
             // 
-            this.textBoxCustomMessage.Location = new System.Drawing.Point(16, 240);
+            this.textBoxCustomMessage.Location = new System.Drawing.Point(16, 253);
             this.textBoxCustomMessage.MaxLength = 240;
             this.textBoxCustomMessage.Multiline = true;
             this.textBoxCustomMessage.Name = "textBoxCustomMessage";
             this.textBoxCustomMessage.Size = new System.Drawing.Size(197, 82);
             this.textBoxCustomMessage.TabIndex = 7;
+            this.textBoxCustomMessage.Text = "Write a custom body for your email here!";
             // 
             // comboBoxTemplate
             // 
@@ -279,7 +284,7 @@
             this.comboBoxTemplate.Items.AddRange(new object[] {
             "RedTemplate.jpg",
             "RedAndBlackTemplate.jpg"});
-            this.comboBoxTemplate.Location = new System.Drawing.Point(16, 186);
+            this.comboBoxTemplate.Location = new System.Drawing.Point(16, 148);
             this.comboBoxTemplate.Name = "comboBoxTemplate";
             this.comboBoxTemplate.Size = new System.Drawing.Size(138, 21);
             this.comboBoxTemplate.TabIndex = 6;
@@ -287,7 +292,7 @@
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(16, 130);
+            this.buttonSend.Location = new System.Drawing.Point(18, 599);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(81, 23);
             this.buttonSend.TabIndex = 5;
@@ -300,7 +305,7 @@
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendPrevious);
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendSelected);
             this.groupBoxSendTo.Controls.Add(this.radioButtonSendAll);
-            this.groupBoxSendTo.Location = new System.Drawing.Point(16, 28);
+            this.groupBoxSendTo.Location = new System.Drawing.Point(16, 23);
             this.groupBoxSendTo.Name = "groupBoxSendTo";
             this.groupBoxSendTo.Size = new System.Drawing.Size(125, 96);
             this.groupBoxSendTo.TabIndex = 4;
@@ -340,28 +345,10 @@
             this.radioButtonSendAll.Text = "All";
             this.radioButtonSendAll.UseVisualStyleBackColor = true;
             // 
-            // buttonRemoveAttachment
-            // 
-            this.buttonRemoveAttachment.Location = new System.Drawing.Point(97, 599);
-            this.buttonRemoveAttachment.Name = "buttonRemoveAttachment";
-            this.buttonRemoveAttachment.Size = new System.Drawing.Size(116, 23);
-            this.buttonRemoveAttachment.TabIndex = 3;
-            this.buttonRemoveAttachment.Text = "&Remove Attachment";
-            this.buttonRemoveAttachment.UseVisualStyleBackColor = true;
-            // 
-            // buttonAttachFile
-            // 
-            this.buttonAttachFile.Location = new System.Drawing.Point(16, 599);
-            this.buttonAttachFile.Name = "buttonAttachFile";
-            this.buttonAttachFile.Size = new System.Drawing.Size(75, 23);
-            this.buttonAttachFile.TabIndex = 2;
-            this.buttonAttachFile.Text = "Attach &File";
-            this.buttonAttachFile.UseVisualStyleBackColor = true;
-            // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(13, 12);
+            this.labelUser.Location = new System.Drawing.Point(13, 7);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(29, 13);
             this.labelUser.TabIndex = 1;
@@ -370,7 +357,7 @@
             // pictureBoxPreview
             // 
             this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 353);
+            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 355);
             this.pictureBoxPreview.Name = "pictureBoxPreview";
             this.pictureBoxPreview.Size = new System.Drawing.Size(200, 240);
             this.pictureBoxPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -495,6 +482,37 @@
             this.buttonAddContact.UseVisualStyleBackColor = true;
             this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
+            // labelSubject
+            // 
+            this.labelSubject.AutoSize = true;
+            this.labelSubject.Location = new System.Drawing.Point(15, 178);
+            this.labelSubject.Name = "labelSubject";
+            this.labelSubject.Size = new System.Drawing.Size(43, 13);
+            this.labelSubject.TabIndex = 12;
+            this.labelSubject.Text = "Subject";
+            // 
+            // textBoxSubject
+            // 
+            this.textBoxSubject.Location = new System.Drawing.Point(12, 199);
+            this.textBoxSubject.MaxLength = 50;
+            this.textBoxSubject.Multiline = true;
+            this.textBoxSubject.Name = "textBoxSubject";
+            this.textBoxSubject.Size = new System.Drawing.Size(197, 25);
+            this.textBoxSubject.TabIndex = 13;
+            this.textBoxSubject.Text = "Write a custom subject here!";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // addContactToolStripMenuItem
+            // 
+            this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.addContactToolStripMenuItem.Text = "Add Contact";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,8 +554,6 @@
         private System.Windows.Forms.RadioButton radioButtonSendPrevious;
         private System.Windows.Forms.RadioButton radioButtonSendSelected;
         private System.Windows.Forms.RadioButton radioButtonSendAll;
-        private System.Windows.Forms.Button buttonRemoveAttachment;
-        private System.Windows.Forms.Button buttonAttachFile;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonEditSelected;
         private System.Windows.Forms.Button buttonDeleteSelected;
@@ -568,6 +584,10 @@
         private System.Windows.Forms.ToolStripMenuItem editSelectedContactsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutF1ToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBoxSubject;
+        private System.Windows.Forms.Label labelSubject;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addContactToolStripMenuItem;
 
     }
 }
